@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage section concepts | Life Spa London</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { padding-top: 0; }
+    .top { background: var(--black); color: #fff; padding: 56px 0 48px; }
+    .top h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); max-width: none; }
+    .top p { color: rgba(255,255,255,.75); max-width: 640px; margin: 0; }
+    .jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .jump a { border: 1px solid rgba(255,255,255,.35); border-radius: 100px; padding: 6px 14px; font-size: .88rem; text-decoration: none; color: #fff; }
+    .jump a:hover { background: var(--peach); color: var(--black); border-color: var(--peach); }
+    .concept { padding: 72px 0; border-bottom: 1px solid var(--line); }
+    .concept:nth-of-type(even) { background: #fafafa; }
+    .c-head { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; justify-content: space-between; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 2px solid var(--black); }
+    .c-head h2 { margin: 0; font-size: 1.9rem; }
+    .c-head .num { font-family: var(--font-head); color: var(--peach); font-size: 3rem; line-height: 1; margin-right: 12px; }
+    .c-meta { font-size: .88rem; color: var(--grey); max-width: 520px; }
+    .c-meta b { color: var(--black); font-weight: 500; }
+    .stage { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 48px 32px; }
+    .stage h3.title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 28px; }
+    .ph-img { background: var(--peach-soft) center/cover no-repeat; border-radius: 6px; }
+
+    /* 1 vertical tabs */
+    .v1 { display: grid; grid-template-columns: 260px 1fr; gap: 40px; }
+    .v1-list button { display: block; width: 100%; text-align: left; background: none; border: 0; border-left: 3px solid var(--line); padding: 16px 20px; font: 500 1.05rem var(--font-body); color: var(--grey); cursor: pointer; }
+    .v1-list button[aria-selected="true"] { border-left-color: var(--peach); color: var(--black); background: var(--peach-soft); }
+    .v1-panel { display: none; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+    .v1-panel.on { display: grid; }
+    .v1-panel .ph-img { aspect-ratio: 4/3; }
+
+    /* 2 photo tiles */
+    .v2 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+    .tile { position: relative; aspect-ratio: 3/4; border-radius: 6px; overflow: hidden; color: #fff; text-decoration: none; display: flex; align-items: flex-end; background: var(--peach-soft) center/cover; }
+    .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.8)); }
+    .tile .in { position: relative; z-index: 1; padding: 20px; width: 100%; }
+    .tile h4 { color: #fff; font-size: 1.5rem; margin: 0 0 6px; }
+    .tile ul { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .4s, opacity .3s; font-size: .9rem; }
+    .tile:hover ul, .tile:focus-within ul { max-height: 220px; opacity: 1; }
+    .tile .more { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+    .tile.ph-tile { color: var(--black); }
+    .tile.ph-tile h4 { color: var(--black); }
+    .tile.ph-tile::after { background: none; }
+
+    /* 3 accordion rows */
+    .v3 { max-width: 860px; }
+    .v3 .acc-body { padding-bottom: 20px; }
+    .v3 .acc-btn { font-family: var(--font-head); font-size: 1.7rem; font-weight: 500; padding: 26px 4px; }
+    .v3 .acc-count { font: 400 .85rem var(--font-body); color: var(--grey); }
+
+    /* 4 editorial list with hover preview */
+    .v4 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: start; }
+    .v4-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding .25s; }
+    .v4-row:first-child { border-top: 1px solid var(--line); }
+    .v4-row h4 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); margin: 0; transition: color .2s; color: #b9b3ad; }
+    .v4-row span { font-size: .88rem; color: var(--grey); text-align: right; }
+    .v4-row:hover, .v4-row.on { padding-left: 14px; }
+    .v4-row:hover h4, .v4-row.on h4 { color: var(--black); }
+    .v4-prev { position: sticky; top: 40px; aspect-ratio: 4/5; }
+    .v4-prev .ph-img { position: absolute; inset: 0; opacity: 0; transition: opacity .35s; }
+    .v4-prev .ph-img.on { opacity: 1; }
+
+    /* 5 split hover with intro + links */
+    .v5 { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 8px; overflow: hidden; min-height: 460px; background: var(--black); }
+    .v5-img { position: relative; }
+    .v5-img .ph-img { position: absolute; inset: 0; border-radius: 0; opacity: 0; transition: opacity .35s; }
+    .v5-img .ph-img.on { opacity: 1; }
+    .v5-side { color: #fff; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .v5-side button { background: none; border: 0; text-align: left; color: rgba(255,255,255,.5); font: 400 1.9rem var(--font-head); padding: 6px 0; cursor: pointer; }
+    .v5-side button.on { color: #fff; }
+    .v5-side button.on::before { content: "— "; color: var(--peach); }
+    .v5-info { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.2); min-height: 150px; }
+    .v5-info p { color: rgba(255,255,255,.8); }
+    .v5-info a { color: #fff; }
+
+    /* 6 pure text: pills + columns, no photos */
+    .v6 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; }
+    .v6 h4 { font: 500 .78rem var(--font-body); letter-spacing: .14em; text-transform: uppercase; padding-bottom: 12px; border-bottom: 2px solid var(--peach); margin-bottom: 14px; }
+    .v6 a { display: block; padding: 6px 0; text-decoration: none; }
+    .v6 a:hover { text-decoration: underline; text-decoration-color: var(--peach); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .v6 a.all { margin-top: 10px; font-size: .88rem; color: var(--grey); }
+
+    /* 7 scroll-snap carousel */
+    .v7 { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
+    .v7 .slide { flex: 0 0 min(340px, 80%); scroll-snap-align: start; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+    .v7 .slide .ph-img { aspect-ratio: 4/3; border-radius: 0; }
+    .v7 .slide .b { padding: 22px; }
+    .v7 .slide h4 { font-size: 1.6rem; }
+    .v7 .slide p { color: var(--grey); font-size: .95rem; }
+    .v7-note { font-size: .85rem; color: var(--grey); margin-top: 8px; }
+
+    /* ---- Most booked (B) ---- */
+    .partb { background: var(--black); color: #fff; padding: 48px 0; }
+    .partb h2 { color: #fff; margin: 0 0 6px; }
+    .partb p { color: rgba(255,255,255,.7); margin: 0; }
+    .mhead { margin-bottom: 28px; }
+    .price { font-weight: 500; color: var(--black); }
+    .tbc-s { background: var(--peach-soft); border-bottom: 1px dashed var(--peach); padding: 0 4px; }
+
+    /* B2 overlay cards */
+    .m2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .m2 a { position: relative; aspect-ratio: 3/4; border-radius: 6px; overflow: hidden; color: #fff; text-decoration: none; display: flex; align-items: flex-end; background: center/cover; }
+    .m2 a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.1) 30%, rgba(0,0,0,.85)); }
+    .m2 .in { position: relative; z-index: 1; padding: 26px; }
+    .m2 h4 { color: #fff; font-size: 1.8rem; margin: 8px 0; }
+    .m2 p { font-size: .95rem; color: rgba(255,255,255,.88); margin: 0 0 12px; }
+    .chip { display: inline-block; background: var(--peach); color: var(--black); border-radius: 100px; padding: 5px 14px; font-size: .85rem; font-weight: 500; }
+
+    /* B3 compact rows */
+    .m3 a { display: grid; grid-template-columns: 150px 1fr auto; gap: 28px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .m3 a:first-child { border-top: 1px solid var(--line); }
+    .m3 .ph-img { aspect-ratio: 4/3; }
+    .m3 h4 { font-size: 1.7rem; margin: 0 0 4px; }
+    .m3 p { margin: 0; color: var(--grey); }
+    .m3 .r { text-align: right; white-space: nowrap; }
+    .m3 a:hover h4 { text-decoration: underline; text-decoration-color: var(--peach); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+
+    /* B4 feature + two */
+    .m4 { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; min-height: 520px; }
+    .m4 a { position: relative; border-radius: 6px; overflow: hidden; color: #fff; text-decoration: none; display: flex; align-items: flex-end; background: center/cover; min-height: 250px; }
+    .m4 a:first-child { grid-row: span 2; }
+    .m4 a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.8)); }
+    .m4 .in { position: relative; z-index: 1; padding: 28px; }
+    .m4 h4 { color: #fff; font-size: 1.7rem; margin: 6px 0; }
+    .m4 a:first-child h4 { font-size: 2.6rem; }
+    .m4 p { margin: 0 0 10px; font-size: .95rem; max-width: 40ch; color: rgba(255,255,255,.9); }
+
+    /* B5 numbered */
+    .m5 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+    .m5 a { text-decoration: none; border-top: 2px solid var(--black); padding-top: 18px; }
+    .m5 .n { font-family: var(--font-head); font-size: 4.2rem; line-height: 1; color: var(--peach); }
+    .m5 h4 { font-size: 1.8rem; margin: 10px 0 4px; }
+    .m5 .ph-img { aspect-ratio: 16/9; margin: 14px 0; }
+    .m5 p { color: var(--grey); }
+
+    /* B6 price list */
+    .m6 { max-width: 900px; }
+    .m6 a { display: grid; grid-template-columns: 1fr auto 30px; gap: 24px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .m6 a:first-child { border-top: 1px solid var(--line); }
+    .m6 h4 { font-size: 1.9rem; margin: 0 0 4px; }
+    .m6 p { margin: 0; color: var(--grey); }
+    .m6 .pr { text-align: right; white-space: nowrap; font-size: .95rem; color: var(--grey); }
+    .m6 .pr b { display: block; color: var(--black); font-size: 1.3rem; font-weight: 500; }
+    .m6 .ar { transition: transform .2s; font-size: 1.4rem; }
+    .m6 a:hover .ar { transform: translateX(6px); }
+
+    /* B7 spotlight */
+    .m7 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+    .m7-img { position: relative; aspect-ratio: 4/3; }
+    .m7-img .ph-img { position: absolute; inset: 0; opacity: 0; transition: opacity .35s; }
+    .m7-img .ph-img.on { opacity: 1; }
+    .m7-pick { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+    .m7-pick button { border: 1px solid var(--line); background: #fff; border-radius: 100px; padding: 8px 18px; font: 500 .9rem var(--font-body); cursor: pointer; }
+    .m7-pick button.on { background: var(--black); color: #fff; border-color: var(--black); }
+    .m7-info h4 { font-size: 2.4rem; }
+
+    @media (max-width: 900px) {
+      .m2, .m5 { grid-template-columns: 1fr; }
+      .m3 a { grid-template-columns: 90px 1fr; }
+      .m3 .r { grid-column: 2; text-align: left; }
+      .m4 { grid-template-columns: 1fr; grid-template-rows: none; }
+      .m4 a:first-child { grid-row: auto; min-height: 340px; }
+      .m7 { grid-template-columns: 1fr; }
+      .v1, .v4, .v5 { grid-template-columns: 1fr; }
+      .v1-list { display: flex; overflow-x: auto; }
+      .v1-list button { border-left: 0; border-bottom: 3px solid var(--line); white-space: nowrap; }
+      .v1-list button[aria-selected="true"] { border-bottom-color: var(--peach); }
+      .v1-panel.on { grid-template-columns: 1fr; }
+      .v2 { grid-template-columns: 1fr 1fr; }
+      .tile ul { max-height: none; opacity: 1; }
+      .v4-prev { display: none; }
+      .v5-img { min-height: 260px; }
+      .v6 { grid-template-columns: 1fr 1fr; }
+      .stage { padding: 28px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow" style="color:rgba(255,255,255,.6)">Life Spa London · Design options</p>
+    <h1>Homepage concepts: 14 options</h1>
+    <p><b>A1–A7: "What we offer".  B1–B7: "Most booked".</b> Each uses the brief's copy. Every treatment stays one click from the homepage, with one action per section and no repeated buttons. Pick one per section (or mix two) and I'll drop it into the homepage.</p>
+    <nav class="jump" aria-label="Concepts">
+      <a href="#c1">A1 Vertical tabs</a><a href="#c2">A2 Photo tiles</a><a href="#c3">A3 Accordion</a><a href="#c4">A4 Editorial list</a><a href="#c5">A5 Split viewer</a><a href="#c6">A6 Text columns</a><a href="#c7">A7 Swipe cards</a>
+      <a href="#d1" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B1 Cards</a><a href="#d2" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B2 Overlay</a><a href="#d3" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B3 Rows</a><a href="#d4" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B4 Feature + 2</a><a href="#d5" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B5 Numbered</a><a href="#d6" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B6 Price list</a><a href="#d7" style="background:var(--peach);color:var(--black);border-color:var(--peach)">B7 Spotlight</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="concept" id="c1"><div class="wrap">
+    <div class="c-head"><h2><span class="num">1</span>Vertical tabs</h2><p class="c-meta"><b>Closest to the original tabs.</b> Group names stay visible in a side list, so there is one click to reach any group. Photo and treatment links on the right. Familiar, easy to scan.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v1" data-render="v1"></div></div>
+  </div></section>
+
+  <section class="concept" id="c2"><div class="wrap">
+    <div class="c-head"><h2><span class="num">2</span>Photo tiles</h2><p class="c-meta"><b>Most visual, least text.</b> Five tall photo cards. Treatment links appear on hover (always shown on mobile). The whole tile goes to the group menu.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v2" data-render="v2"></div></div>
+  </div></section>
+
+  <section class="concept" id="c3"><div class="wrap">
+    <div class="c-head"><h2><span class="num">3</span>Plus/minus accordion</h2><p class="c-meta"><b>Matches Jo's favourite pattern</b> (the + rows on luminisbeauty.co.uk), and the same pattern the service pages use. Very tidy, closed by default. No photos.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v3 accordion" data-render="v3"></div></div>
+  </div></section>
+
+  <section class="concept" id="c4"><div class="wrap">
+    <div class="c-head"><h2><span class="num">4</span>Editorial list + hover preview</h2><p class="c-meta"><b>Big, calm typography.</b> Large group names; hovering one swaps the photo beside it. Each row links straight to its menu. Fewest elements on screen.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v4" data-render="v4"></div></div>
+  </div></section>
+
+  <section class="concept" id="c5"><div class="wrap">
+    <div class="c-head"><h2><span class="num">5</span>Split viewer (dark)</h2><p class="c-meta"><b>Strongest contrast, one compact block.</b> Photo on the left, group names on the right. Pick a group to see its two-line intro and links. Adds a black band between white sections.</p></div>
+    <div class="stage" style="padding:0;border:0"><div class="v5" data-render="v5"></div></div>
+  </div></section>
+
+  <section class="concept" id="c6"><div class="wrap">
+    <div class="c-head"><h2><span class="num">6</span>Text columns (no photos)</h2><p class="c-meta"><b>Fastest to use, one click to every treatment.</b> All five groups and every treatment visible at once, like a menu card. Minimal, but the least visual.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v6" data-render="v6"></div></div>
+  </div></section>
+
+  <section class="concept" id="c7"><div class="wrap">
+    <div class="c-head"><h2><span class="num">7</span>Swipe cards</h2><p class="c-meta"><b>Best on phones.</b> A row of cards you swipe or scroll sideways, each with a photo, two-line intro and links. Keeps the section short on mobile.</p></div>
+    <div class="stage"><h3 class="title">What we offer</h3><div class="v7" data-render="v7"></div><p class="v7-note">Scroll sideways for more →</p></div>
+  </div></section>
+
+  <!-- ================= PART B: Most booked ================= -->
+  <div class="partb"><div class="wrap"><h2>Part B · "Most booked"</h2><p>Three cards: HydraFacial, Environ and Laser, each with a photo, short text and price.</p></div></div>
+
+  <section class="concept" id="d1"><div class="wrap">
+    <div class="c-head"><h2><span class="num">1</span>Classic cards</h2><p class="c-meta"><b>Current version.</b> Photo on top, name, price and time, short text, one link. Clear and balanced.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="cards" data-render="m1"></div></div>
+  </div></section>
+
+  <section class="concept" id="d2"><div class="wrap">
+    <div class="c-head"><h2><span class="num">2</span>Photo overlay cards</h2><p class="c-meta"><b>More visual.</b> Tall full-photo cards with the text over a dark gradient and the price as a peach tag. Same size as the "Made for you" cards below it, so the page feels consistent.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m2" data-render="m2"></div></div>
+  </div></section>
+
+  <section class="concept" id="d3"><div class="wrap">
+    <div class="c-head"><h2><span class="num">3</span>Compact rows</h2><p class="c-meta"><b>Shortest on the page.</b> Small photo, text and price on one line per treatment. Reads like a menu and takes little height, so the next section shows sooner.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m3" data-render="m3"></div></div>
+  </div></section>
+
+  <section class="concept" id="d4"><div class="wrap">
+    <div class="c-head"><h2><span class="num">4</span>One feature + two</h2><p class="c-meta"><b>Clear hierarchy.</b> HydraFacial (the top seller) gets a large card; Environ and Laser sit beside it. Good if you want to push one treatment.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m4" data-render="m4"></div></div>
+  </div></section>
+
+  <section class="concept" id="d5"><div class="wrap">
+    <div class="c-head"><h2><span class="num">5</span>Numbered ranking</h2><p class="c-meta"><b>Says "most booked" literally.</b> Large peach 1, 2, 3 with a small wide photo. Light and editorial, with a top rule in black.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m5" data-render="m5"></div></div>
+  </div></section>
+
+  <section class="concept" id="d6"><div class="wrap">
+    <div class="c-head"><h2><span class="num">6</span>Price list (no photos)</h2><p class="c-meta"><b>Most minimal.</b> Big name, one line of text, price and time on the right. Matches the + price rows on the service pages. Least visual.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m6" data-render="m6"></div></div>
+  </div></section>
+
+  <section class="concept" id="d7"><div class="wrap">
+    <div class="c-head"><h2><span class="num">7</span>Spotlight switcher</h2><p class="c-meta"><b>One at a time.</b> A large photo with three buttons; choosing one swaps the photo and text. Compact and focused, but shows one treatment at a glance.</p></div>
+    <div class="stage"><div class="mhead"><p class="eyebrow">Most booked</p><h3 class="title" style="margin:0">This month's favourites</h3></div><div class="m7" data-render="m7"></div></div>
+  </div></section>
+</main>
+
+<script>
+(function () {
+  var A = "assets/";
+  var G = [
+    { name: "Facials & Skin", img: "hydrafacial-2.jpg",
+      intro: "Results-led facials from HydraFacial, Environ, CACI, Dermalogica and Elemis, plus Dermalux LED. We'll match the treatment to your skin.",
+      items: ["HydraFacial","Environ","CACI","Dermalogica","Elemis","Dermalux LED"], extra: "Which facial is right for me?" },
+    { name: "Massage & Lymphatic", img: "massage-2.jpg",
+      intro: "Swedish, aromatherapy and deep tissue massage, plus manual lymphatic drainage for face and body. The pressure is always set to suit you.",
+      items: ["Massage","Lymphatic drainage"] },
+    { name: "Body", img: "body-1.jpg",
+      intro: "Scrubs, tanning and contouring treatments to smooth, firm and refresh.",
+      items: ["CACI Bottoms Up","Elemis body treatments","Salt scrub","Moroccan tan","Bioslimming"] },
+    { name: "Hair Removal", img: "laser-2.webp",
+      intro: "Laser hair removal for longer-lasting results, and Lycon waxing for face and body.",
+      items: ["Laser hair removal","Waxing"] },
+    { name: "Hands & Feet", img: null,
+      intro: "Manicures and pedicures with OPI.",
+      items: ["Manicure","Pedicure"] }
+  ];
+  function bg(g) { return g.img ? 'style="background-image:url(' + A + g.img + ')"' : ""; }
+  function ph(g) { return g.img ? "" : "placeholder"; }
+  function links(g) { return g.items.map(function (i) { return '<a href="#">' + i + "</a>"; }).join(""); }
+  function esc(s) { return s.replace(/&/g, "&amp;"); }
+
+  var R = {};
+  R.v1 = function () {
+    return '<div class="v1-list" role="tablist">' + G.map(function (g, i) {
+      return '<button role="tab" aria-selected="' + (i === 0) + '" data-i="' + i + '">' + esc(g.name) + "</button>";
+    }).join("") + "</div><div>" + G.map(function (g, i) {
+      return '<div class="v1-panel' + (i === 0 ? " on" : "") + '" data-p="' + i + '"><div class="ph-img ' + ph(g) + '" ' + bg(g) + ">" + (g.img ? "" : "Photo needed") + "</div><div><p>" + g.intro +
+        '</p><div class="tag-links">' + links(g) + '</div><a class="link-arrow" href="#">View full menu</a></div></div>';
+    }).join("") + "</div>";
+  };
+  R.v2 = function () {
+    return G.map(function (g) {
+      return '<a class="tile ' + (g.img ? "" : "ph-tile placeholder") + '" href="#" ' + bg(g) + '><div class="in"><h4>' + esc(g.name) + "</h4><ul>" +
+        g.items.map(function (i) { return "<li>" + i + "</li>"; }).join("") + '</ul><span class="more">View menu →</span></div></a>';
+    }).join("");
+  };
+  R.v3 = function () {
+    return G.map(function (g, i) {
+      return '<div class="acc-item"><button class="acc-btn" aria-expanded="false" aria-controls="v3p' + i + '" id="v3b' + i + '"><span class="acc-title">' + esc(g.name) +
+        '</span><span class="acc-count">' + g.items.length + ' treatments</span><span class="acc-icon" aria-hidden="true"></span></button><div class="acc-panel" id="v3p' + i +
+        '" role="region" aria-labelledby="v3b' + i + '"><div><div class="acc-body"><p>' + g.intro + '</p><div class="tag-links">' + links(g) + '</div><a class="link-arrow" href="#">View full menu</a></div></div></div></div>';
+    }).join("");
+  };
+  R.v4 = function () {
+    return "<div>" + G.map(function (g, i) {
+      return '<a class="v4-row' + (i === 0 ? " on" : "") + '" href="#" data-i="' + i + '"><h4>' + esc(g.name) + "</h4><span>" + g.items.length + " treatments →</span></a>";
+    }).join("") + '</div><div class="v4-prev">' + G.map(function (g, i) {
+      return '<div class="ph-img ' + ph(g) + (i === 0 ? " on" : "") + '" data-i="' + i + '" ' + bg(g) + ">" + (g.img ? "" : "Photo needed") + "</div>";
+    }).join("") + "</div>";
+  };
+  R.v5 = function () {
+    return '<div class="v5-img">' + G.map(function (g, i) {
+      return '<div class="ph-img ' + ph(g) + (i === 0 ? " on" : "") + '" data-i="' + i + '" ' + bg(g) + "></div>";
+    }).join("") + '</div><div class="v5-side"><h3 class="title" style="color:#fff;font-size:1rem;font-family:var(--font-body);letter-spacing:.16em;text-transform:uppercase;opacity:.7">What we offer</h3>' +
+      G.map(function (g, i) { return '<button class="' + (i === 0 ? "on" : "") + '" data-i="' + i + '">' + esc(g.name) + "</button>"; }).join("") +
+      '<div class="v5-info"></div></div>';
+  };
+  R.v6 = function () {
+    return G.map(function (g) {
+      return "<div><h4>" + esc(g.name) + "</h4>" + links(g) + '<a class="all" href="#">View full menu →</a></div>';
+    }).join("");
+  };
+  R.v7 = function () {
+    return G.map(function (g) {
+      return '<div class="slide"><div class="ph-img ' + ph(g) + '" ' + bg(g) + ">" + (g.img ? "" : "Photo needed") + '</div><div class="b"><h4>' + esc(g.name) + "</h4><p>" + g.intro +
+        '</p><div class="tag-links">' + links(g) + '</div><a class="link-arrow" href="#">View full menu</a></div></div>';
+    }).join("");
+  };
+
+  /* ---- Most booked data + renderers ---- */
+  var P = [
+    { name: "HydraFacial", img: "treatment-lauren.jpg", price: "From £149", time: "30–60 min", pr: "£149",
+      text: "Deep cleanse, extract and hydrate in one treatment. Skin looks brighter straight away, with no downtime.", cta: "Explore HydraFacial" },
+    { name: "Environ facials", img: "facials.webp", price: "From £85", time: "60 min", pr: "£85",
+      text: "Vitamin A facials that strengthen your skin over time, with a home-care plan made for you.", cta: "Explore Environ" },
+    { name: "Laser hair removal", img: "laser.webp", price: "From £30", time: "per area", pr: "£30",
+      text: 'Smoother skin that lasts, on face and body. Your journey starts with a patch test.', cta: "Explore Laser" }
+  ];
+  function pbg(p) { return 'style="background-image:url(' + A + p.img + ')"'; }
+  function meta(p) { return "<strong>" + p.price + "</strong>" + (p.time ? " · " + p.time : ""); }
+  R.m1 = function () {
+    return P.map(function (p) {
+      return '<a class="card" href="#"><div class="ph"><img src="' + A + p.img + '" alt=""></div><h3>' + p.name + '</h3><p class="meta">' + meta(p) + "</p><p>" + p.text + '</p><span class="link-arrow">' + p.cta + "</span></a>";
+    }).join("");
+  };
+  R.m2 = function () {
+    return P.map(function (p) {
+      return '<a href="#" ' + pbg(p) + '><div class="in"><span class="chip">' + p.price + (p.time ? " · " + p.time : "") + "</span><h4>" + p.name + "</h4><p>" + p.text + '</p><span class="link-arrow" style="border-color:#fff">' + p.cta + "</span></div></a>";
+    }).join("");
+  };
+  R.m3 = function () {
+    return P.map(function (p) {
+      return '<a href="#"><div class="ph-img" ' + pbg(p) + '></div><div><h4>' + p.name + "</h4><p>" + p.text + '</p></div><div class="r"><div class="price">' + p.price + '</div><div class="meta" style="margin:0">' + (p.time || "") + "</div></div></a>";
+    }).join("");
+  };
+  R.m4 = function () {
+    return P.map(function (p, i) {
+      return '<a href="#" ' + pbg(p) + '><div class="in"><span class="chip">' + p.price + (p.time ? " · " + p.time : "") + "</span><h4>" + p.name + "</h4>" + (i === 0 ? "<p>" + p.text + "</p>" : "") + '<span class="link-arrow" style="border-color:#fff">' + p.cta + "</span></div></a>";
+    }).join("");
+  };
+  R.m5 = function () {
+    return P.map(function (p, i) {
+      return '<a href="#"><div class="n">0' + (i + 1) + "</div><h4>" + p.name + '</h4><p class="meta" style="margin:0">' + meta(p) + '</p><div class="ph-img" ' + pbg(p) + "></div><p>" + p.text + '</p><span class="link-arrow">' + p.cta + "</span></a>";
+    }).join("");
+  };
+  R.m6 = function () {
+    return P.map(function (p) {
+      return '<a href="#"><div><h4>' + p.name + "</h4><p>" + p.text + '</p></div><div class="pr"><b>' + p.pr + "</b>" + (p.time || "&nbsp;") + '</div><span class="ar" aria-hidden="true">→</span></a>';
+    }).join("");
+  };
+  R.m7 = function () {
+    return '<div class="m7-img">' + P.map(function (p, i) { return '<div class="ph-img' + (i === 0 ? " on" : "") + '" data-i="' + i + '" ' + pbg(p) + "></div>"; }).join("") +
+      '</div><div class="m7-info"><div class="m7-pick">' + P.map(function (p, i) { return '<button class="' + (i === 0 ? "on" : "") + '" data-i="' + i + '">' + p.name + "</button>"; }).join("") + '</div><div class="m7-body"></div></div>';
+  };
+
+  document.querySelectorAll("[data-render]").forEach(function (el) { el.innerHTML = R[el.dataset.render](); });
+
+  // B7 spotlight
+  var m7 = document.querySelector(".m7");
+  function show7(i) {
+    var p = P[i];
+    m7.querySelectorAll(".m7-pick button").forEach(function (b) { b.classList.toggle("on", b.dataset.i === String(i)); });
+    m7.querySelectorAll(".m7-img .ph-img").forEach(function (x) { x.classList.toggle("on", x.dataset.i === String(i)); });
+    m7.querySelector(".m7-body").innerHTML = "<h4>" + p.name + '</h4><p class="meta">' + meta(p) + "</p><p>" + p.text + '</p><a class="link-arrow" href="#">' + p.cta + "</a>";
+  }
+  m7.querySelectorAll(".m7-pick button").forEach(function (b) { b.addEventListener("click", function () { show7(+b.dataset.i); }); });
+  show7(0);
+
+  // 1 vertical tabs
+  document.querySelectorAll(".v1-list button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var root = b.closest(".v1");
+      root.querySelectorAll(".v1-list button").forEach(function (x) { x.setAttribute("aria-selected", x === b); });
+      root.querySelectorAll(".v1-panel").forEach(function (p) { p.classList.toggle("on", p.dataset.p === b.dataset.i); });
+    });
+  });
+  // 3 accordion
+  document.querySelectorAll(".v3 .acc-btn").forEach(function (b) {
+    b.addEventListener("click", function () { b.setAttribute("aria-expanded", b.getAttribute("aria-expanded") !== "true"); });
+  });
+  // 4 hover preview
+  var v4 = document.querySelector(".v4");
+  function show4(i) {
+    v4.querySelectorAll(".v4-row").forEach(function (r) { r.classList.toggle("on", r.dataset.i === i); });
+    v4.querySelectorAll(".v4-prev .ph-img").forEach(function (p) { p.classList.toggle("on", p.dataset.i === i); });
+  }
+  v4.querySelectorAll(".v4-row").forEach(function (r) {
+    r.addEventListener("mouseenter", function () { show4(r.dataset.i); });
+    r.addEventListener("focus", function () { show4(r.dataset.i); });
+  });
+  // 5 split viewer
+  var v5 = document.querySelector(".v5");
+  function show5(i) {
+    var g = G[i];
+    v5.querySelectorAll(".v5-side button").forEach(function (b) { b.classList.toggle("on", b.dataset.i === String(i)); });
+    v5.querySelectorAll(".v5-img .ph-img").forEach(function (p) { p.classList.toggle("on", p.dataset.i === String(i)); });
+    v5.querySelector(".v5-info").innerHTML = "<p>" + g.intro + '</p><div class="tag-links">' + g.items.map(function (t) {
+      return '<a href="#" style="border-color:rgba(255,255,255,.3);color:#fff">' + t + "</a>";
+    }).join("") + '</div><a class="link-arrow" href="#">View full menu</a>';
+  }
+  v5.querySelectorAll(".v5-side button").forEach(function (b) {
+    b.addEventListener("click", function () { show5(+b.dataset.i); });
+    b.addEventListener("mouseenter", function () { show5(+b.dataset.i); });
+  });
+  show5(0);
+})();
+</script>
+</body>
+</html>
