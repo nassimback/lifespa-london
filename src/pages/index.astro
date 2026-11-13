@@ -1,0 +1,287 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title={"Life Spa London | Expert skin and beauty care in South Ealing"} description={"Advanced facials, massage and laser hair removal from senior therapists in South Ealing, London. Over 25 years of experience."} style={1} page="index">
+<main id="main">
+
+  <!-- 1. Hero -->
+  <section class="hero" aria-label="Welcome">
+    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+      <source src="assets/salon-video-2.mp4" type="video/mp4">
+    </video>
+    <div class="wrap hero-content">
+      <p class="eyebrow">South Ealing · Over 25 years</p>
+      <h1>Expert skin and beauty care, in South Ealing.</h1>
+      <p class="sub">Advanced facials, massage and laser hair removal from senior therapists, each with over 20 years' experience.</p>
+      <div class="btn-row">
+        <a class="btn btn--light" href="#">Book Online</a>
+        <a class="btn btn--ghost-light" href="#offer">View Treatments</a>
+      </div>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 from 47 Google reviews</p>
+    </div>
+  </section>
+
+  <!-- 2. Popular this month -->
+  <section class="section" id="popular">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Most booked</p>
+        <h2>This month's favourites</h2>
+      </div>
+      <div class="cards">
+        <a class="card" href="hydrafacial.html">
+          <div class="ph"><img src="assets/treatment-lauren.jpg" alt="HydraFacial treatment in progress" loading="lazy"></div>
+          <h3>HydraFacial</h3>
+          <p class="meta"><strong>From £149</strong> · 30–60 min</p>
+          <p>Deep cleanse, extract and hydrate in one treatment. Skin looks brighter straight away, with no downtime.</p>
+          <span class="link-arrow">Explore HydraFacial</span>
+        </a>
+        <a class="card" href="environ.html">
+          <div class="ph"><img src="assets/facials.webp" alt="Client enjoying a facial" loading="lazy"></div>
+          <h3>Environ facials</h3>
+          <p class="meta"><strong>From £85</strong> · 60 min</p>
+          <p>Vitamin A facials that strengthen your skin over time, with a home-care plan made for you.</p>
+          <span class="link-arrow">Explore Environ</span>
+        </a>
+        <a class="card" href="#">
+          <div class="ph"><img src="assets/laser.webp" alt="Laser hair removal treatment" loading="lazy"></div>
+          <h3>Laser hair removal</h3>
+          <p class="meta"><strong>From £30</strong> · per area</p>
+          <p>Smoother skin that lasts, on face and body. Your journey starts with a patch test.</p>
+          <span class="link-arrow">Explore Laser</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. What we offer -->
+  <section class="section section--tint" id="offer">
+    <div class="wrap">
+      <div class="section-head"><h2>What we offer</h2></div>
+      <div data-tabs>
+        <div class="tabs-list" role="tablist" aria-label="Treatment groups">
+          <button class="tab" role="tab" id="t1" aria-controls="p1">Facials &amp; Skin</button>
+          <button class="tab" role="tab" id="t2" aria-controls="p2">Massage &amp; Lymphatic</button>
+          <button class="tab" role="tab" id="t3" aria-controls="p3">Body</button>
+          <button class="tab" role="tab" id="t4" aria-controls="p4">Hair Removal</button>
+          <button class="tab" role="tab" id="t5" aria-controls="p5">Hands &amp; Feet</button>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="p1" aria-labelledby="t1">
+          <div class="ph"><img src="assets/hydrafacial-2.jpg" alt="HydraFacial scalp treatment" loading="lazy"></div>
+          <div>
+            <h3>Facials &amp; Skin</h3>
+            <p>Results-led facials from HydraFacial, Environ, CACI, Dermalogica and Elemis, plus Dermalux LED. We'll match the treatment to your skin.</p>
+            <div class="tag-links">
+              <a href="hydrafacial.html">HydraFacial</a><a href="environ.html">Environ</a><a href="#">CACI</a><a href="#">Dermalogica</a><a href="#">Elemis</a><a href="#">Dermalux LED</a>
+            </div>
+            <div class="panel-actions">
+              <a class="link-arrow" href="#">Which facial is right for me?</a>
+              <a class="link-arrow" href="#">View full menu</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="p2" aria-labelledby="t2">
+          <div class="ph"><img src="assets/massage-2.jpg" alt="Relaxing face massage" loading="lazy"></div>
+          <div>
+            <h3>Massage &amp; Lymphatic</h3>
+            <p>Swedish, aromatherapy and deep tissue massage, plus manual lymphatic drainage for face and body. The pressure is always set to suit you.</p>
+            <div class="tag-links"><a href="#">Massage</a><a href="#">Lymphatic drainage</a></div>
+            <div class="panel-actions"><a class="link-arrow" href="#">View full menu</a></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="p3" aria-labelledby="t3">
+          <div class="ph"><img src="assets/body-1.jpg" alt="Body treatment" loading="lazy"></div>
+          <div>
+            <h3>Body</h3>
+            <p>Scrubs, tanning and contouring treatments to smooth, firm and refresh.</p>
+            <div class="tag-links"><a href="#">CACI Bottoms Up</a><a href="#">Elemis body treatments</a><a href="#">Salt scrub</a><a href="#">Moroccan tan</a><a href="#">Bioslimming</a></div>
+            <div class="panel-actions"><a class="link-arrow" href="#">View full menu</a></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="p4" aria-labelledby="t4">
+          <div class="ph"><img src="assets/laser-2.webp" alt="Laser hair removal consultation" loading="lazy"></div>
+          <div>
+            <h3>Hair Removal</h3>
+            <p>Laser hair removal for longer-lasting results, and Lycon waxing for face and body.</p>
+            <div class="tag-links"><a href="#">Laser hair removal</a><a href="#">Waxing</a></div>
+            <div class="panel-actions"><a class="link-arrow" href="#">View full menu</a></div>
+          </div>
+        </div>
+
+        <div class="tab-panel" role="tabpanel" id="p5" aria-labelledby="t5">
+          <div class="ph"><img src="assets/hands-feet.jpg" alt="Manicure in progress" loading="lazy"></div>
+          <div>
+            <h3>Hands &amp; Feet</h3>
+            <p>Manicures and pedicures with OPI.</p>
+            <div class="tag-links"><a href="#">Manicure</a><a href="#">Pedicure</a></div>
+            <div class="panel-actions"><a class="link-arrow" href="#">View full menu</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Made for you -->
+  <section class="section" id="made-for-you">
+    <div class="wrap duo">
+      <div class="feature">
+        <img src="assets/hydrafacial-1.jpg" alt="Teen skin facial" loading="lazy">
+        <div class="inner">
+          <h3>Teen skin</h3>
+          <p>Gentle, effective care for breakouts and oily skin, plus a simple routine to follow at home. Parents are welcome at the consultation. Under 16? Please call us before booking.</p>
+          <a class="btn btn--light" href="#">Teen facials</a>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="assets/men-1.jpg" alt="Facial treatment for men" loading="lazy">
+        <div class="inner">
+          <h3>For men</h3>
+          <p>Deep-cleansing facials, massage and hair removal, booked and done without fuss.</p>
+          <a class="btn btn--light" href="#">Treatments for men</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Recognition -->
+  <section class="recognition-v1" aria-label="Recognition">
+    <div class="stats-band">
+      <div class="wrap">
+        <h2>Trusted in South Ealing for over 25 years</h2>
+        <ul class="stats">
+          <li><span class="num"><span data-count="25">25</span><i>+</i></span><span class="lbl">Years in South Ealing</span></li>
+          <li><span class="num"><span data-count="5000">5,000</span><i>+</i></span><span class="lbl">Happy clients</span></li>
+          <li><span class="num"><span data-count="20">20</span><i>+</i></span><span class="lbl">Years' experience, every senior therapist</span></li>
+          <li><span class="num">2017</span><span class="lbl">West Spa of the Year</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="award-cards">
+        <figure><img src="assets/award-2017.jpg" alt="The London Hair &amp; Beauty Awards 2017"><figcaption><b>Winner</b>West Spa of the Year 2017</figcaption></figure>
+        <figure><img src="assets/award-2018.jpg" alt="The London Hair &amp; Beauty Awards 2018"><figcaption><b>Highly Commended</b>2018</figcaption></figure>
+        <figure><img src="assets/award-2019.jpg" alt="The London Hair &amp; Beauty Awards 2019"><figcaption><b>Highly Commended</b>2019</figcaption></figure>
+        <figure class="verified"><img src="assets/logo-hydrafacial.png" alt="HydraFacial"><figcaption><b>Verified</b>HydraFacial provider</figcaption></figure>
+      </div>
+    </div>
+    <div class="logo-marquee" aria-label="Brands we use: HydraFacial, Environ, CACI, Dermalogica, Elemis, Lycon">
+      <div class="logo-track" aria-hidden="true"><img src="assets/logo-hydrafacial.png" alt="HydraFacial" class="tall"><img src="assets/logo-environ.png" alt="Environ"><span class="word">CACI</span><img src="assets/logo-dermalogica.png" alt="Dermalogica"><img src="assets/logo-elemis.png" alt="Elemis"><img src="assets/logo-lycon.png" alt="Lycon"><img src="assets/logo-hydrafacial.png" alt="" class="tall"><img src="assets/logo-environ.png" alt=""><span class="word">CACI</span><img src="assets/logo-dermalogica.png" alt=""><img src="assets/logo-elemis.png" alt=""><img src="assets/logo-lycon.png" alt=""><img src="assets/logo-hydrafacial.png" alt="HydraFacial" class="tall"><img src="assets/logo-environ.png" alt="Environ"><span class="word">CACI</span><img src="assets/logo-dermalogica.png" alt="Dermalogica"><img src="assets/logo-elemis.png" alt="Elemis"><img src="assets/logo-lycon.png" alt="Lycon"><img src="assets/logo-hydrafacial.png" alt="" class="tall"><img src="assets/logo-environ.png" alt=""><span class="word">CACI</span><img src="assets/logo-dermalogica.png" alt=""><img src="assets/logo-elemis.png" alt=""><img src="assets/logo-lycon.png" alt=""></div>
+    </div>
+  </section>
+
+  <!-- 6. About Jo -->
+  <section class="section" id="about">
+    <div class="wrap about">
+      <!-- Stand-in portrait: replace assets/team-jo.jpg with the real photo of Jo. -->
+      <img class="portrait" src="assets/team-jo.jpg" alt="Jo, owner of Life Spa London" loading="lazy" style="width:100%;object-fit:cover">
+      <div>
+        <p class="eyebrow">Meet the owner</p>
+        <h2>Hello, I'm Jo</h2>
+        <p class="lead">Life Spa has looked after South Ealing for over 25 years. I first joined as a student receptionist, came back as a client, trained as a beauty therapist and became the owner in 2016. Every treatment here starts with a short conversation, so you know exactly what you're booking and why.</p>
+        <a class="link-arrow" href="#">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Meet the team -->
+  <section class="section section--tint" id="team">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Meet the team</h2>
+        <p class="lead">Senior therapists who know skin, each with over 20 years' experience.</p>
+      </div>
+      <div class="team">
+        <!-- Team photos below are stock stand-ins: replace assets/team-*.jpg with the real portraits. -->
+        <div class="member"><div class="ph"><img src="assets/team-jo.jpg" alt="Jo, Owner" loading="lazy"></div><h3>Jo</h3><p>Owner</p></div>
+        <div class="member"><div class="ph"><img src="assets/team-nilani.jpg" alt="Nilani, Beauty Therapist" loading="lazy"></div><h3>Nilani</h3><p>Beauty Therapist</p></div>
+        <div class="member"><div class="ph"><img src="assets/team-katerina.jpg" alt="Katerina, Therapist" loading="lazy"></div><h3>Katerina</h3><p>Therapist</p></div>
+        <div class="member"><div class="ph"><img src="assets/team-soraya.jpg" alt="Soraya, Therapist" loading="lazy"></div><h3>Soraya</h3><p>Therapist</p></div>
+        <div class="member"><div class="ph"><img src="assets/team-ahlem.jpg" alt="Ahlem, Therapist" loading="lazy"></div><h3>Ahlem</h3><p>Therapist</p></div>
+      </div>
+      <p style="margin-top:32px"><a class="link-arrow" href="#">Meet everyone</a></p>
+    </div>
+  </section>
+
+  <!-- 8. Reviews -->
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What our clients say</h2>
+        <p class="rating-line"><span class="stars" aria-hidden="true">★</span> 4.9 from 47 Google reviews</p>
+      </div>
+      <div class="reviews">
+        <figure class="review" style="margin:0"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“The atmosphere was so calm and relaxing. The team gave info when needed, carried out their services the best they can including extra information after.”</blockquote><cite>— Elisha, HydraFacial and massage</cite></figure>
+        <figure class="review" style="margin:0"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“She takes the time to check how you’re feeling and adjusts the pressure exactly to your preference, making sure you are comfortable throughout the whole treatment.”</blockquote><cite>— Erentina Barjoti, Massage</cite></figure>
+        <figure class="review" style="margin:0"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>“Jo was lovely and I found the facial really relaxing. My skin felt and looked amazing!”</blockquote><cite>— Caroline de Vivenot, Environ facial</cite></figure>
+      </div>
+      <a class="link-arrow" href="#">Read all reviews</a>
+    </div>
+  </section>
+
+  <!-- 9. FAQs -->
+  <section class="section section--tint" id="faqs">
+    <div class="wrap" style="max-width:860px">
+      <div class="section-head"><h2>Good to know</h2></div>
+      <div class="accordion">
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f1" id="fb1"><span class="acc-title">Do I need a consultation?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f1" role="region" aria-labelledby="fb1"><div><div class="acc-body"><p>For most facials, no. Your therapist does a short skin check at the start of your appointment. Laser hair removal needs a patch test first.</p></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f2" id="fb2"><span class="acc-title">Which facial is right for me?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f2" role="region" aria-labelledby="fb2"><div><div class="acc-body"><p>HydraFacial gives an instant glow and clearer pores. Environ builds long-term skin health with vitamin A. CACI lifts and firms. Dermalogica targets breakouts and sensitivity. Elemis pairs results with deep relaxation.</p><p><a class="link-arrow" href="#">Compare our facials</a></p></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f3" id="fb3"><span class="acc-title">Do you treat teenagers?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f3" role="region" aria-labelledby="fb3"><div><div class="acc-body"><p>Yes. Our teen facials are gentle and focus on breakouts and oil control. Under 16s need a parent or guardian to book.</p></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f4" id="fb4"><span class="acc-title">How do I book?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f4" role="region" aria-labelledby="fb4"><div><div class="acc-body"><p>Online at any time, through the Life Spa London app, or call <a href="tel:+442085675159">020 8567 5159</a>.</p></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f5" id="fb5"><span class="acc-title">What is your cancellation policy?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f5" role="region" aria-labelledby="fb5"><div><div class="acc-body"><p>We ask for notice if you need to change or cancel an appointment, so we can offer your time to someone else. Please see our full policy for the details.</p><p><a class="link-arrow" href="#">Full cancellation policy</a></p></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false" aria-controls="f6" id="fb6"><span class="acc-title">Do you sell gift vouchers?</span><span class="acc-icon" aria-hidden="true"></span></button>
+          <div class="acc-panel" id="f6" role="region" aria-labelledby="fb6"><div><div class="acc-body"><p>Yes, for any amount or treatment.</p><p><a class="link-arrow" href="#">Buy a gift voucher</a></p></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Visit us -->
+  <section class="section" id="visit">
+    <div class="wrap visit">
+      <iframe title="Map of Life Spa London, South Ealing" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=35-39+South+Ealing+Road,+London+W5+4QT&amp;output=embed"></iframe>
+      <div>
+        <h2>Visit us in South Ealing</h2>
+        <p>Unit 2, 35–39 South Ealing Road, London W5 4QT. A short walk from South Ealing station.</p>
+        <table class="hours">
+          <tbody>
+            <tr><td>Monday</td><td>10am–6pm</td></tr>
+            <tr><td>Tuesday–Friday</td><td>10am–8pm</td></tr>
+            <tr><td>Saturday</td><td>10am–6pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </tbody>
+        </table>
+        <ul class="contact-lines">
+          <li><a href="tel:+442085675159">020 8567 5159</a></li>
+          <li>WhatsApp <a href="https://wa.me/447592792460">07592 792460</a></li>
+          <li><a href="mailto:bookings@lifespalondon.co.uk">bookings@lifespalondon.co.uk</a></li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="#">Book Online</a>
+          <a class="btn btn--ghost" href="https://maps.google.com/?q=35-39+South+Ealing+Road,+London+W5+4QT" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</Base>

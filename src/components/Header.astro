@@ -1,0 +1,38 @@
+---
+import { MENU, href, type PageId, type StyleId } from '../data/site';
+interface Props { style: StyleId; page: PageId }
+const { style, page } = Astro.props;
+const home = href('index', style);
+const anchor = (h: string) => (page === 'index' ? h : `${home}${h}`);
+---
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href={home} aria-label="Life Spa London home"><img src="assets/logo.png" alt="Life Spa London"></a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li class="has-mega">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">Treatments</button>
+          <div class="mega">
+            <div class="mega-grid">
+              {MENU.map((group) => (
+                <div>
+                  <h4>{group.title}</h4>
+                  {group.items.map((it) => (
+                    <a href={it.page ? href(it.page, style) : '#'} aria-current={it.page && it.page === page ? 'page' : undefined}>{it.label}</a>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </li>
+        <li><a class="nav-link" href="#">Teens</a></li>
+        <li><a class="nav-link" href="#">Men</a></li>
+        <li><a class="nav-link" href="#">Offers &amp; Gifts</a></li>
+        <li><a class="nav-link" href={anchor('#about')}>About</a></li>
+        <li><a class="nav-link" href={anchor('#visit')}>Contact</a></li>
+      </ul>
+      <a class="btn book" href="#">Book Now</a>
+    </nav>
+  </div>
+</header>

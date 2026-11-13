@@ -1,0 +1,36 @@
+---
+import { href, type PageId, type StyleId } from '../data/site';
+interface Props { style: StyleId; page: PageId }
+const { style, page } = Astro.props;
+const home = href('index', style);
+const anchor = (h: string) => (page === 'index' ? h : `${home}${h}`);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    {style === 2 && <p class="foot-big" aria-hidden="true">Life Spa <em>London</em></p>}
+    <div class="footer-grid">
+      <div>
+        {style !== 2 && <img class="f-logo" src="assets/logo.png" alt="Life Spa London">}
+        <p>Unit 2, 35–39 South Ealing Road,<br>London W5 4QT</p>
+        <div class="badges-app">
+          <a href="#" aria-label="Download on the App Store"><img src="assets/app-store.png" alt="Download on the App Store"></a>
+          <a href="#" aria-label="Get it on Google Play"><img src="assets/google-play.png" alt="Get it on Google Play"></a>
+        </div>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul><li><a href={anchor('#offer')}>Treatments</a></li><li><a href="#">Teens</a></li><li><a href="#">Men</a></li><li><a href="#">Offers &amp; Gifts</a></li><li><a href={anchor('#about')}>About</a></li><li><a href={anchor('#visit')}>Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <ul><li><a href="#">Cancellation policy</a></li><li><a href="#">Privacy policy</a></li><li><a href="#">Terms</a></li></ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li></ul>
+      </div>
+    </div>
+    <div class="legal"><span>© <span data-year>{year}</span> Life Spa London</span><span>South Ealing, London</span></div>
+  </div>
+</footer>

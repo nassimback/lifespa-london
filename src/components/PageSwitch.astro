@@ -1,0 +1,14 @@
+---
+// Fixed "Preview" menu (middle-left): jump between the 3 pages and the 3 design styles.
+import { PAGES, href, type PageId, type StyleId } from '../data/site';
+interface Props { style: StyleId; page: PageId }
+const { style, page } = Astro.props;
+const styles: StyleId[] = [1, 2, 3];
+---
+<nav class="page-switch" aria-label="Preview pages">
+  <span class="ps-label">Preview</span>
+  {PAGES.map((p) => <a href={href(p.id, style)} aria-current={p.id === page ? 'page' : undefined}>{p.label}</a>)}
+  <div class="ps-style">
+    {styles.map((s) => <a href={href(page, s)} aria-current={s === style ? 'page' : undefined}>Style {s}</a>)}
+  </div>
+</nav>

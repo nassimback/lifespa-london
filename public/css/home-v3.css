@@ -1,0 +1,224 @@
+/* Life Spa London – Style 3 ("quiet classic")
+   Inspired by luminisbeauty.co.uk (centred logo + small-caps nav, image banners,
+   centred serif titles, thin-ruled + rows) and bsmedispa.co.uk (page flow).
+   Loaded after style.css. White base, black type, peach details, light footer. */
+
+.v3 {
+  --font-head: "Ovo", Georgia, serif;
+  --font-body: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --black: #141414;
+  --ink: #2a2a2a;
+  --grey: #77716c;
+  --peach: #f1c4aa;
+  --peach-deep: #d99a78;
+  --peach-soft: #fbf1ea;
+  --line: #e9e3de;
+  --header-h: 118px;
+  font-size: 17px;
+  letter-spacing: .01em;
+}
+.v3 h1, .v3 h2, .v3 h3, .v3 h4 { font-weight: 400; letter-spacing: .02em; }
+.v3 h2 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.v3 .eyebrow { font-size: .72rem; letter-spacing: .3em; color: var(--peach-deep); font-weight: 700; }
+.v3 .section { padding: clamp(72px, 9vw, 120px) 0; }
+
+/* Centred section titles with a small ornament */
+.v3 .section-head { text-align: center; margin-left: auto; margin-right: auto; max-width: 680px; margin-bottom: clamp(36px, 5vw, 56px); }
+.v3 .section-head h2::after { content: ""; display: block; width: 56px; height: 1px; background: var(--peach-deep); margin: 22px auto 0; }
+.v3 .section-head .lead, .v3 .section-head p { margin-top: 18px; }
+
+/* Buttons: square, letter-spaced */
+.v3 .btn { border-radius: 0; font: 700 .74rem var(--font-body); letter-spacing: .24em; padding: 17px 30px; }
+.v3 .link-arrow { font: 700 .74rem var(--font-body); letter-spacing: .2em; text-transform: uppercase; border-bottom-width: 1px; padding-bottom: 4px; }
+
+/* ---------- Header: utility bar + centred logo + nav below ---------- */
+.utility { background: var(--black); color: rgba(255,255,255,.85); font: 400 .74rem var(--font-body); letter-spacing: .16em; text-transform: uppercase; }
+.utility .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; gap: 16px; }
+.utility a { color: #fff; text-decoration: none; }
+.utility a:hover { color: var(--peach); }
+.v3 .site-header { position: sticky; top: 0; height: auto; background: #fff; color: var(--black); box-shadow: 0 1px 0 var(--line); }
+.v3 .site-header.is-solid { box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+.v3 .header-inner { flex-direction: column; gap: 6px; padding-top: 18px; padding-bottom: 8px; transition: padding .25s; position: relative; }
+.v3 .site-header.is-solid .header-inner { padding-top: 10px; padding-bottom: 4px; }
+.v3 .logo img { height: 34px; filter: brightness(0); transition: height .25s; }
+.v3 .site-header.is-solid .logo img { height: 26px; }
+.v3 .nav a.nav-link, .v3 .nav button.nav-link { font: 400 .76rem var(--font-body); letter-spacing: .22em; text-transform: uppercase; padding: 12px 16px; }
+.v3 .nav .book { padding: 12px 22px; margin-left: 14px; }
+.v3 .site-header:not(.is-solid):not(.menu-open) .btn.book { background: var(--black); color: #fff; border-color: var(--black); }
+.v3 .mega { top: 100%; }
+.v3 .mega h4 { color: var(--peach-deep); font-weight: 700; }
+.v3 .mega a { font-family: var(--font-head); font-size: 1.05rem; }
+
+/* ---------- Hero: image/video banner, text bottom-left ---------- */
+.v3 .hero { min-height: calc(100vh - 156px); min-height: calc(100svh - 156px); align-items: flex-end; }
+.v3 .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.05) 30%, rgba(0,0,0,.62) 100%); }
+.v3 .hero-content { padding-top: 120px; padding-bottom: clamp(48px, 7vw, 84px); }
+.v3 .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); max-width: 16ch; line-height: 1.08; }
+.v3 .hero .eyebrow { color: #fff; }
+.v3 .hero .sub { font-size: 1.08rem; }
+.v3 .hero--service { min-height: 64vh; min-height: 64svh; }
+.v3 .hero--service h1 { font-size: clamp(3rem, 7vw, 5.6rem); }
+.v3 .crumbs { font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; color: #fff; }
+.v3 .facts li { font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; }
+.v3 .rating { font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; }
+
+/* ---------- Popular: centred cards, "Name → from £" ---------- */
+.v3 .cards { gap: clamp(20px, 3vw, 40px); }
+.v3 .card { text-align: center; }
+.v3 .card .ph { border-radius: 0; aspect-ratio: 3/4; }
+.v3 .card h3 { font-size: 1.8rem; margin-top: 24px; }
+.v3 .card .meta { letter-spacing: .14em; text-transform: uppercase; font-size: .76rem; }
+.v3 .card p { max-width: 34ch; margin-left: auto; margin-right: auto; }
+
+/* ---------- What we offer: centred underline tabs, ruled treatment list ---------- */
+.v3 #offer.section--tint { background: #fff; }
+.v3 .tabs-list { justify-content: center; border-bottom: 1px solid var(--line); gap: 0; }
+.v3 .tab { font: 400 .78rem var(--font-body); letter-spacing: .22em; text-transform: uppercase; padding: 16px 22px; border-bottom-width: 2px; }
+.v3 .tab[aria-selected="true"] { border-bottom-color: var(--black); color: var(--black); }
+.v3 .tab-panel { gap: clamp(32px, 5vw, 72px); }
+.v3 .tab-panel .ph { border-radius: 0; aspect-ratio: 5/4; }
+.v3 .tab-panel h3 { font-size: 2.4rem; }
+.v3 .tag-links { flex-direction: column; gap: 0; border-top: 1px solid var(--line); margin: 22px 0 28px; }
+.v3 .tag-links a { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 14px 4px; font: 400 1.15rem var(--font-head); display: flex; justify-content: space-between; }
+.v3 .tag-links a::after { content: "→"; font-family: var(--font-body); color: var(--peach-deep); transition: transform .2s; }
+.v3 .tag-links a:hover { background: var(--peach-soft); padding-left: 12px; }
+
+/* ---------- Made for you: banner cards ---------- */
+.v3 .feature { border-radius: 0; min-height: 520px; }
+.v3 .feature h3 { font-size: 2.4rem; }
+.v3 .feature .btn { margin-top: 6px; }
+
+/* ---------- Recognition: light counters, awards, logo carousel ---------- */
+.v3 .stats-band { background: #fff; color: var(--black); border-top: 1px solid var(--line); padding-bottom: clamp(48px, 6vw, 72px); }
+.v3 .stats-band::before { display: none; }
+.v3 .stats-band h2 { color: var(--black); }
+.v3 .stats-band h2::after { content: ""; display: block; width: 56px; height: 1px; background: var(--peach-deep); margin: 22px auto 0; }
+.v3 .stats .num { color: var(--black); font-weight: 400; }
+.v3 .stats .num i { color: var(--peach-deep); }
+.v3 .stats li + li { border-left-color: var(--line); }
+.v3 .stats .lbl { color: var(--grey); }
+.v3 .award-cards { margin-top: 0; }
+.v3 .award-cards figure { border-radius: 0; background: var(--peach-soft); box-shadow: none; }
+.v3 .award-cards figure:hover { box-shadow: none; }
+.v3 .award-cards figcaption b { font-size: 1.25rem; }
+.v3 .recognition-v1 { border-bottom: 0; }
+
+/* ---------- About Jo: text left, framed portrait right ---------- */
+.v3 #about { background: var(--peach-soft); }
+.v3 .about { grid-template-columns: 6fr 5fr; }
+.v3 .about > img, .v3 .about .portrait { order: 2; border-radius: 0; box-shadow: 22px 22px 0 #fff, 22px 22px 0 1px var(--peach); }
+.v3 .about h2 { font-size: clamp(2.6rem, 5vw, 4rem); }
+
+/* ---------- Team ---------- */
+.v3 #team.section--tint { background: #fff; }
+.v3 .member { text-align: center; }
+.v3 .member .ph { border-radius: 0; }
+.v3 .member .ph img { border-radius: 0; }
+.v3 .member h3 { font-size: 1.6rem; margin-bottom: 4px; }
+.v3 .member p { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; }
+
+/* ---------- Reviews: one big quote at a time (slider) ---------- */
+.v3 #reviews { background: var(--black); color: #fff; text-align: center; }
+.v3 #reviews h2 { color: #fff; }
+.v3 #reviews .rating-line { color: rgba(255,255,255,.7); }
+.v3 #reviews .rating-line .stars { color: var(--peach); }
+.v3 #reviews .section-head { margin-bottom: 24px; }
+.v3 .reviews { display: flex; grid-template-columns: none; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 0; margin-bottom: 18px; scroll-behavior: smooth; }
+.v3 .reviews::-webkit-scrollbar { display: none; }
+.v3 .review { flex: 0 0 100%; scroll-snap-align: center; background: none; border: 0; padding: 10px clamp(8px, 8vw, 140px); }
+.v3 .review .stars { color: var(--peach); letter-spacing: 6px; }
+.v3 .review blockquote { font: 400 clamp(1.5rem, 3vw, 2.3rem)/1.4 var(--font-head); color: #fff; max-width: 30ch; margin: 22px auto; }
+.v3 .review cite { color: rgba(255,255,255,.6); letter-spacing: .2em; text-transform: uppercase; font-size: .74rem; }
+.rv-dots { display: flex; justify-content: center; gap: 10px; margin-bottom: 32px; }
+.rv-dots button { width: 9px; height: 9px; border-radius: 50%; border: 1px solid rgba(255,255,255,.6); background: transparent; padding: 0; cursor: pointer; }
+.rv-dots button[aria-current="true"] { background: var(--peach); border-color: var(--peach); }
+.v3 #reviews .link-arrow { color: #fff; }
+
+/* ---------- FAQs / accordions: thin-ruled + rows ---------- */
+.v3 #faqs.section--tint, .v3 #before-you-book.section--tint { background: #fff; }
+.v3 .accordion { border-top: 1px solid var(--black); }
+.v3 .acc-item { border-bottom-color: var(--line); }
+.v3 .acc-btn { font: 400 1.25rem var(--font-head); padding: 22px 4px; }
+.v3 .acc-btn[aria-expanded="true"] .acc-title { color: var(--peach-deep); }
+.v3 .acc-icon::before, .v3 .acc-icon::after { background: var(--black); }
+
+/* ---------- Visit ---------- */
+.v3 #visit { background: var(--peach-soft); }
+.v3 .visit iframe { border-radius: 0; filter: grayscale(1) contrast(1.05); }
+
+/* ---------- Footer: light ---------- */
+.v3 .site-footer { background: #fff; color: var(--ink); border-top: 1px solid var(--line); }
+.v3 .footer-grid h4 { color: var(--black); }
+.v3 .footer-grid img.f-logo { filter: brightness(0); }
+.v3 .legal { border-top-color: var(--line); color: var(--grey); }
+.v3 .wa { background: var(--black); border-color: #fff; }
+
+/* ---------- Service pages ---------- */
+.v3 .prose { text-align: center; margin: 0 auto; }
+.v3 .prose h2::after { content: ""; display: block; width: 56px; height: 1px; background: var(--peach-deep); margin: 22px auto 26px; }
+.v3 .prose p { font: 400 clamp(1.2rem, 2vw, 1.5rem)/1.6 var(--font-head); color: var(--ink); }
+.v3 .section--tint { background: var(--peach-soft); }
+.v3 .steps { gap: clamp(20px, 3vw, 36px); }
+.v3 .step { border-top: 0; text-align: center; padding-top: 0; }
+.v3 .step .ico { width: 64px; height: 64px; margin: 0 auto 16px; background: #fff; border: 1px solid var(--peach); }
+.v3 .step .n { color: var(--peach-deep); font-weight: 700; }
+.v3 .step h3 { font-size: 1.45rem; }
+.v3 .step-note { text-align: center; font-style: italic; }
+.v3 .suits h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); }
+.v3 .compare { background: #fff; border: 1px solid var(--black); border-radius: 0; outline: 1px solid var(--black); outline-offset: 6px; }
+.v3 .compare h3 { font-size: 1.8rem; }
+.v3 .compare li strong { color: var(--black); }
+.v3 #prices .wrap, .v3 #before-you-book .wrap { text-align: left; }
+.v3 #prices .section-head, .v3 #before-you-book .section-head { text-align: center; }
+.v3 .group-title { font-size: 1.8rem; text-align: center; margin-top: 52px; }
+.v3 .group-title + .accordion, .v3 .group-note + .accordion { margin-top: 18px; }
+.v3 .group-note { text-align: center; font-style: italic; }
+.v3 #prices .acc-time { font: 400 .78rem var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.v3 #prices .acc-price { font: 400 1.1rem var(--font-head); }
+.v3 .ba-box { border-radius: 0; }
+.v3 .ba figcaption { text-align: center; font-family: var(--font-head); font-size: 1.05rem; }
+.v3 .cta { background: var(--peach-soft); color: var(--black); }
+.v3 .cta h2 { color: var(--black); font-size: clamp(2.6rem, 5vw, 4rem); }
+.v3 .cta h2::after { content: ""; display: block; width: 56px; height: 1px; background: var(--peach-deep); margin: 22px auto 30px; }
+.v3 .cta .btn { background: var(--black); color: #fff; border-color: var(--black); }
+.v3 .cta .btn:hover { background: transparent; color: var(--black); }
+.v3 .cta .btn--ghost-light { background: transparent; color: var(--black); border-color: var(--black); }
+.v3 .cta .btn--ghost-light:hover { background: var(--black); color: #fff; }
+
+@media (max-width: 980px) {
+  .v3 { --header-h: 62px; }
+  .v3 .header-inner { flex-direction: row; padding-top: 12px; padding-bottom: 12px; }
+  .v3 .site-header.is-solid .header-inner { padding-top: 12px; padding-bottom: 12px; }
+  .v3 .about { grid-template-columns: 1fr; }
+  .v3 .about > img, .v3 .about .portrait { order: 0; }
+  .v3 .tabs-list { justify-content: flex-start; }
+  .utility .hide-sm { display: none; }
+  .v3 .hero { min-height: 82vh; min-height: 82svh; }
+}
+@media (max-width: 560px) {
+  .utility .wrap { justify-content: center; }
+  .v3 .tab { padding: 14px 14px; }
+}
+
+/* ---------- Steps v2: numbered process timeline (Style 3) ---------- */
+.v3 .steps { counter-reset: st; position: relative; padding-top: 34px; gap: 20px; }
+.v3 .steps::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: var(--peach); }
+.v3 .step { position: relative; background: #fff; text-align: left; padding: 34px 30px 32px; border: 0; }
+.v3 .step::after { content: ""; position: absolute; top: -34px; left: 30px; width: 13px; height: 13px; border-radius: 50%; background: var(--peach-deep); box-shadow: 0 0 0 5px var(--peach-soft); }
+.v3 .step::before { counter-increment: st; content: counter(st, decimal-leading-zero); display: block; font: 400 3rem/1 var(--font-head); color: var(--peach-deep); margin-bottom: 26px; }
+.v3 .step .n { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.v3 .step .ico { position: absolute; top: 36px; right: 28px; width: auto; height: auto; margin: 0; background: none; border: 0; }
+.v3 .step .ico svg { width: 26px; height: 26px; stroke: var(--black); stroke-width: 1.2; opacity: .55; }
+.v3 .step h3 { font-size: 1.4rem; margin: 0 0 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+.v3 .step p { text-align: left; font-size: .96rem; line-height: 1.65; }
+.v3 .step-note { margin-top: 36px; }
+@media (max-width: 980px) {
+  .v3 .steps { padding-top: 0; }
+  .v3 .steps::before, .v3 .step::after { display: none; }
+}
+
+/* V3: image layouts on service pages (text left-aligned beside the image) */
+.v3 .wrap.prose.has-img { text-align: left; }
+.v3 .wrap.prose.has-img h2::after { margin: 22px 0 0; }
+.v3 .prose-img img, .v3 .cta-img img { border-radius: 0; }
+.v3 .cta-split h2::after { margin: 22px 0 30px; }
