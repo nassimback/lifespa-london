@@ -12,30 +12,26 @@ const anchor = (h: string) => (page === 'index' ? h : `index.html${h}`);
       <ul>
         <li class="has-mega">
           <button class="nav-link" aria-expanded="false" aria-haspopup="true">Treatments <span class="caret" aria-hidden="true"></span></button>
+          <!-- Dropdown design by Ellaine: floating white card, prices per treatment, "Which facial" panel -->
           <div class="mega">
-            <div class="mega-inner">
-              <div class="mega-grid">
-                {MENU.map((group) => (
-                  <div class="mega-col">
-                    <h4>{group.title}</h4>
-                    {group.items.map((it) => (
-                      <a href={it.page ? href(it.page) : '#'} aria-current={it.page && it.page === page ? 'page' : undefined}>{it.label}</a>
-                    ))}
-                  </div>
-                ))}
+            <div class="mega-card">
+              {MENU.map((group) => (
+                <div class="mega-col">
+                  <h4>{group.title}</h4>
+                  {group.items.map((it) => (
+                    <a class="mrow" href={it.page ? href(it.page) : '#'} aria-current={it.page && it.page === page ? 'page' : undefined}>
+                      <span>{it.label}</span>
+                      {it.from && <span class="p">From {it.from}</span>}
+                    </a>
+                  ))}
+                </div>
+              ))}
+              <div class="mega-side">
+                <p class="ms-title">Which facial is right for you?</p>
+                <p class="ms-copy">Each facial brand we use does something different. Start with your main concern, and we'll fine-tune it at your appointment.</p>
+                <a class="link-arrow" href="#">Compare our facials</a>
+                <p class="ms-made">Made for you: <a href="#">Teens</a> · <a href="#">Men</a></p>
               </div>
-              <a class="mega-feature" href="hydrafacial.html">
-                <img src="assets/treatment-lauren.jpg" alt="" loading="lazy">
-                <span class="mf-body">
-                  <span class="mf-tag">Most booked</span>
-                  <span class="mf-title">HydraFacial</span>
-                  <span class="mf-meta">From £149 · 30–60 min</span>
-                </span>
-              </a>
-            </div>
-            <div class="mega-foot">
-              <span>Not sure what to book? Call <a href="tel:+442085675159">020 8567 5159</a></span>
-              <a class="link-arrow" href={anchor('#offer')}>View all treatments</a>
             </div>
           </div>
         </li>

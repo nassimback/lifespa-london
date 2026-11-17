@@ -155,14 +155,29 @@ import Base from '../layouts/Base.astro';
   <section class="section" id="about">
     <div class="wrap about">
       <div class="pic reveal">
-        <!-- Stand-in portrait: replace assets/team-jo.jpg with the real photo of Jo. -->
-        <img src="assets/team-jo.jpg" alt="Jo, owner of Life Spa London" loading="lazy">
+        <img src="assets/salon-reception-real.jpg" alt="Reception at Life Spa London, South Ealing" loading="lazy">
       </div>
       <div class="reveal d1">
         <p class="eyebrow">Meet the owner</p>
         <h2>Hello, <em>I'm Jo</em></h2>
         <p class="lead">Life Spa has looked after South Ealing for over 25 years. I first joined as a student receptionist, came back as a client, trained as a beauty therapist and became the owner in 2016. Every treatment here starts with a short conversation, so you know exactly what you're booking and why.</p>
         <a class="link-arrow" href="#">Our story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salon tour: the client's walk-through video -->
+  <section class="section dark grain" id="tour">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div><p class="eyebrow">Inside the salon</p><h2>Take a look <em>inside</em></h2>
+        <p class="head-copy">A short walk through Life Spa, from our front door to the treatment rooms.</p></div>
+      </div>
+      <div class="tour framed reveal">
+        <video preload="none" playsinline controls poster="assets/salon-tour-poster.jpg" aria-label="Video tour of Life Spa London">
+          <source src="assets/salon-tour.mp4" type="video/mp4">
+        </video>
+        <button class="tour-play" type="button" aria-label="Play the salon tour"><span aria-hidden="true"></span>Watch the tour · 2 min</button>
       </div>
     </div>
   </section>
@@ -181,6 +196,61 @@ import Base from '../layouts/Base.astro';
         <div class="member reveal d2"><div class="ph"><img src="assets/team-katerina.jpg" alt="Katerina, Therapist" loading="lazy"></div><h3>Katerina</h3><p>Therapist</p></div>
         <div class="member reveal d1"><div class="ph"><img src="assets/team-soraya.jpg" alt="Soraya, Therapist" loading="lazy"></div><h3>Soraya</h3><p>Therapist</p></div>
         <div class="member reveal d2"><div class="ph"><img src="assets/team-ahlem.jpg" alt="Ahlem, Therapist" loading="lazy"></div><h3>Ahlem</h3><p>Therapist</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent work: before/after pairs. PLACEHOLDER images (assets/recent-*-before/after.jpg) until Jo sends real ones. -->
+  <section class="section" id="recent-work">
+    <div class="wrap">
+      <div class="head-row reveal">
+        <div><p class="eyebrow">Before &amp; after</p><h2>Recent <em>work</em></h2>
+        <p class="head-copy">Real results from our treatment rooms.</p></div>
+        <div class="rw-side"><a class="link-arrow" href="#">Follow on Instagram</a><div class="team-nav-slot" data-team-nav></div></div>
+      </div>
+      <div class="rw-track" data-carousel>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-1-before.jpg" alt="Before HydraFacial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-1-after.jpg" alt="After HydraFacial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>HydraFacial</figcaption>
+        </figure>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-2-before.jpg" alt="Before Environ facial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-2-after.jpg" alt="After Environ facial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>Environ facial</figcaption>
+        </figure>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-3-before.jpg" alt="Before CACI facial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-3-after.jpg" alt="After CACI facial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>CACI facial</figcaption>
+        </figure>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-4-before.jpg" alt="Before Dermalogica facial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-4-after.jpg" alt="After Dermalogica facial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>Dermalogica facial</figcaption>
+        </figure>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-5-before.jpg" alt="Before Men's facial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-5-after.jpg" alt="After Men's facial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>Men's facial</figcaption>
+        </figure>
+        <figure class="rw-card">
+          <div class="rw-pair">
+            <div class="rw-img"><img src="assets/recent-6-before.jpg" alt="Before Elemis facial" loading="lazy"><span class="rw-lab">Before</span></div>
+            <div class="rw-img"><img src="assets/recent-6-after.jpg" alt="After Elemis facial" loading="lazy"><span class="rw-lab">After</span></div>
+          </div>
+          <figcaption>Elemis facial</figcaption>
+        </figure>
       </div>
     </div>
   </section>

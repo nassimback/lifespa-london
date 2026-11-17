@@ -47,5 +47,6 @@ Content follows the design brief (9 Nov 2026). Some items are stand-ins until Jo
 
 - Team portraits and Jo's portrait (`assets/team-*.jpg` are stock placeholders)
 - HydraFacial before/after photos (`assets/demo-result-*.jpg` are placeholders; the "before" is the same photo filtered)
+- Homepage "Recent work" before/after pairs (`assets/recent-*-before/after.jpg` are stock placeholders)
 - Perk Lip, Perk Eye and Keravive prices (shown as "Ask us")
 - Real booking links (Book buttons currently point to `#`)

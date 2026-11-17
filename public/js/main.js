@@ -132,14 +132,14 @@
 
 /* Team carousel: drag with the mouse, arrow buttons, swipe on touch (native scroll) */
 (function () {
-  document.querySelectorAll(".team").forEach(function (track) {
+  document.querySelectorAll(".team, [data-carousel]").forEach(function (track) {
     var nav = document.createElement("div");
     nav.className = "team-nav";
-    nav.innerHTML = '<button type="button" aria-label="Previous team member">←</button><button type="button" aria-label="Next team member">→</button>';
+    nav.innerHTML = '<button type="button" aria-label="Previous">←</button><button type="button" aria-label="Next">→</button>';
     var slot = track.closest("section") && track.closest("section").querySelector("[data-team-nav]");
     if (slot) slot.appendChild(nav); else track.parentNode.insertBefore(nav, track.nextSibling);
     var prev = nav.children[0], next = nav.children[1];
-    function step() { var c = track.querySelector(".member"); return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 24) : 300; }
+    function step() { var c = track.firstElementChild; return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 24) : 300; }
     prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });
     next.addEventListener("click", function () { track.scrollBy({ left: step(), behavior: "smooth" }); });
     function update() {
@@ -173,5 +173,16 @@
       }
     });
     track.addEventListener("click", function (e) { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+  });
+})();
+
+/* Salon tour video: big play button over the poster */
+(function () {
+  document.querySelectorAll(".tour").forEach(function (box) {
+    var v = box.querySelector("video"), b = box.querySelector(".tour-play");
+    if (!v || !b) return;
+    b.addEventListener("click", function () { v.play(); });
+    v.addEventListener("play", function () { box.classList.add("playing"); });
+    v.addEventListener("ended", function () { box.classList.remove("playing"); });
   });
 })();

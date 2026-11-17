@@ -6,15 +6,16 @@ export const href = (page: PageId) => `${page}.html`;
 export const FONTS =
   'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500&display=swap';
 
-/** Treatments mega-menu. `page` links to a built page; everything else is "#" until it exists. */
-export const MENU: { title: string; items: { label: string; page?: PageId }[] }[] = [
+/** Treatments mega-menu. `page` links to a built page; everything else is "#" until it exists.
+ *  `from` is the starting price shown in the dropdown (from the design brief / client site). */
+export const MENU: { title: string; items: { label: string; page?: PageId; from?: string }[] }[] = [
   { title: 'Facials & Skin', items: [
-    { label: 'HydraFacial', page: 'hydrafacial' }, { label: 'Environ', page: 'environ' },
-    { label: 'CACI' }, { label: 'Dermalogica' }, { label: 'Elemis' }, { label: 'Dermalux LED' },
+    { label: 'HydraFacial', page: 'hydrafacial', from: '£149' }, { label: 'Environ', page: 'environ', from: '£85' },
+    { label: 'CACI', from: '£45' }, { label: 'Dermalogica', from: '£60' }, { label: 'Elemis', from: '£80' }, { label: 'Dermalux LED' },
   ] },
   { title: 'Massage', items: [{ label: 'Massages' }, { label: 'Lymphatic' }] },
   { title: 'Body', items: [{ label: 'CACI Bottoms Up' }, { label: 'Elemis body' }, { label: 'Salt scrub' }, { label: 'Moroccan tan' }, { label: 'Bioslimming' }] },
-  { title: 'Hair Removal', items: [{ label: 'Laser' }, { label: 'Waxing' }] },
+  { title: 'Hair Removal', items: [{ label: 'Laser', from: '£30' }, { label: 'Waxing' }] },
   { title: 'Hands & Feet', items: [{ label: 'Manicure' }, { label: 'Pedicure' }] },
 ];
 
