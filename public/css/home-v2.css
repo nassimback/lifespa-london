@@ -117,7 +117,6 @@
 .v2 .offer .tab[aria-selected="true"]::after { content: "→"; margin-left: auto; font: 400 1.2rem var(--font-body); color: var(--peach-deep); }
 .v2 .offer .tab-panel.active { display: block; animation: fadeUp .5s ease both; }
 .v2 .offer .tab-panel .ph { aspect-ratio: 16/10; border-radius: 4px; margin-bottom: 30px; position: relative; }
-.v2 .offer .tab-panel .ph::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.55); pointer-events: none; }
 .v2 .offer .tab-panel h3 { display: none; }
 .v2 .offer .tab-panel p { font-size: 1.12rem; max-width: 56ch; }
 .v2 .tag-links a { border-radius: 100px; padding: 9px 18px; font-size: .9rem; }
