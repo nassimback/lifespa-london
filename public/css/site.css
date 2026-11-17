@@ -252,3 +252,12 @@
 }
 .v2 .group-title { font-size: 30px; margin-top: 48px; }
 @media (max-width: 900px) { .v2 .group-title { font-size: 26px; } }
+
+/* Inside the salon: text on the left, a smaller video on the right */
+.tour-split { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.tour-text .head-copy { max-width: 36ch; }
+.tour-split .tour { aspect-ratio: 16/9; max-width: 760px; width: 100%; justify-self: end; }
+@media (max-width: 900px) {
+  .tour-split { grid-template-columns: 1fr; gap: 28px; }
+  .tour-split .tour { justify-self: stretch; max-width: none; }
+}

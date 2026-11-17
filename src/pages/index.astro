@@ -168,12 +168,13 @@ import Base from '../layouts/Base.astro';
 
   <!-- Salon tour: the client's walk-through video -->
   <section class="section dark grain" id="tour">
-    <div class="wrap">
-      <div class="head-row reveal">
-        <div><p class="eyebrow">Inside the salon</p><h2>Take a look <em>inside</em></h2>
-        <p class="head-copy">A short walk through Life Spa, from our front door to the treatment rooms.</p></div>
+    <div class="wrap tour-split">
+      <div class="tour-text reveal">
+        <p class="eyebrow">Inside the salon</p>
+        <h2>Take a look <em>inside</em></h2>
+        <p class="head-copy">A short walk through Life Spa, from our front door to the treatment rooms.</p>
       </div>
-      <div class="tour framed reveal">
+      <div class="tour reveal">
         <video preload="none" playsinline controls poster="assets/salon-tour-poster.jpg" aria-label="Video tour of Life Spa London">
           <source src="assets/salon-tour.mp4" type="video/mp4">
         </video>
