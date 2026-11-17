@@ -1,22 +1,34 @@
 ---
-import { href, type PageId, type StyleId } from '../data/site';
-interface Props { style: StyleId; page: PageId }
-const { style, page } = Astro.props;
-const home = href('index', style);
-const anchor = (h: string) => (page === 'index' ? h : `${home}${h}`);
+import { CONTACT, HOURS, type PageId } from '../data/site';
+interface Props { page: PageId }
+const { page } = Astro.props;
+const anchor = (h: string) => (page === 'index' ? h : `index.html${h}`);
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
   <div class="wrap">
-    {style === 2 && <p class="foot-big" aria-hidden="true">Life Spa <em>London</em></p>}
-    <div class="footer-grid">
-      <div>
-        {style !== 2 && <img class="f-logo" src="assets/logo.png" alt="Life Spa London">}
-        <p>Unit 2, 35–39 South Ealing Road,<br>London W5 4QT</p>
-        <div class="badges-app">
-          <a href="#" aria-label="Download on the App Store"><img src="assets/app-store.png" alt="Download on the App Store"></a>
-          <a href="#" aria-label="Get it on Google Play"><img src="assets/google-play.png" alt="Get it on Google Play"></a>
+    <div class="foot-top">
+      <p class="foot-big" aria-hidden="true">Life Spa <em>London</em></p>
+      <div class="foot-cta">
+        <p>Expert skin and beauty care in South Ealing.</p>
+        <div class="btn-row">
+          <a class="btn btn--light" href="#">Book Now</a>
+          <a class="btn btn--ghost-light" href={CONTACT.phoneHref}>Call {CONTACT.phone}</a>
         </div>
+      </div>
+    </div>
+
+    <div class="foot-cols">
+      <div>
+        <h4>Visit</h4>
+        <p>{CONTACT.addressLines[0]},<br>{CONTACT.addressLines[1]}</p>
+        <a class="foot-link" href={CONTACT.mapsHref} target="_blank" rel="noopener">Get directions →</a>
+      </div>
+      <div>
+        <h4>Opening hours</h4>
+        <ul class="foot-hours">
+          {HOURS.map(([d, h]) => <li><span>{d}</span><span>{h}</span></li>)}
+        </ul>
       </div>
       <div>
         <h4>Menu</h4>
@@ -29,8 +41,13 @@ const year = new Date().getFullYear();
       <div>
         <h4>Follow</h4>
         <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li></ul>
+        <div class="badges-app">
+          <a href="#" aria-label="Download on the App Store"><img src="assets/app-store.png" alt="Download on the App Store"></a>
+          <a href="#" aria-label="Get it on Google Play"><img src="assets/google-play.png" alt="Get it on Google Play"></a>
+        </div>
       </div>
     </div>
-    <div class="legal"><span>© <span data-year>{year}</span> Life Spa London</span><span>South Ealing, London</span></div>
+
+    <div class="legal"><span>© {year} Life Spa London</span><span><a href={CONTACT.phoneHref}>{CONTACT.phone}</a> · <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></span></div>
   </div>
 </footer>

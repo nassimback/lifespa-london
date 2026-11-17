@@ -1,28 +1,41 @@
 ---
-import { MENU, href, type PageId, type StyleId } from '../data/site';
-interface Props { style: StyleId; page: PageId }
-const { style, page } = Astro.props;
-const home = href('index', style);
-const anchor = (h: string) => (page === 'index' ? h : `${home}${h}`);
+import { MENU, href, type PageId } from '../data/site';
+interface Props { page: PageId }
+const { page } = Astro.props;
+const anchor = (h: string) => (page === 'index' ? h : `index.html${h}`);
 ---
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo" href={home} aria-label="Life Spa London home"><img src="assets/logo.png" alt="Life Spa London"></a>
+    <a class="logo" href="index.html" aria-label="Life Spa London home"><img src="assets/logo.png" alt="Life Spa London"></a>
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav" aria-label="Main">
       <ul>
         <li class="has-mega">
-          <button class="nav-link" aria-expanded="false" aria-haspopup="true">Treatments</button>
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">Treatments <span class="caret" aria-hidden="true"></span></button>
           <div class="mega">
-            <div class="mega-grid">
-              {MENU.map((group) => (
-                <div>
-                  <h4>{group.title}</h4>
-                  {group.items.map((it) => (
-                    <a href={it.page ? href(it.page, style) : '#'} aria-current={it.page && it.page === page ? 'page' : undefined}>{it.label}</a>
-                  ))}
-                </div>
-              ))}
+            <div class="mega-inner">
+              <div class="mega-grid">
+                {MENU.map((group) => (
+                  <div class="mega-col">
+                    <h4>{group.title}</h4>
+                    {group.items.map((it) => (
+                      <a href={it.page ? href(it.page) : '#'} aria-current={it.page && it.page === page ? 'page' : undefined}>{it.label}</a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+              <a class="mega-feature" href="hydrafacial.html">
+                <img src="assets/treatment-lauren.jpg" alt="" loading="lazy">
+                <span class="mf-body">
+                  <span class="mf-tag">Most booked</span>
+                  <span class="mf-title">HydraFacial</span>
+                  <span class="mf-meta">From £149 · 30–60 min</span>
+                </span>
+              </a>
+            </div>
+            <div class="mega-foot">
+              <span>Not sure what to book? Call <a href="tel:+442085675159">020 8567 5159</a></span>
+              <a class="link-arrow" href={anchor('#offer')}>View all treatments</a>
             </div>
           </div>
         </li>

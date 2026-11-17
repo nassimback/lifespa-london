@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title={"Environ facials in South Ealing | Life Spa London"} description={"Environ vitamin A facials at Life Spa London, South Ealing, from £85. A skin plan built step by step, with a home-care routine made for you."} style={1} page="environ">
+<Base title={"Environ facials in South Ealing | Life Spa London"} description={"Environ vitamin A facials at Life Spa London, South Ealing, from £85. A skin plan built step by step, with a home-care routine made for you."} page="environ">
 <main id="main">
 
   <!-- 1. Hero -->
@@ -10,82 +10,23 @@ import Base from '../layouts/Base.astro';
       <source src="assets/environ-hero.mp4" type="video/mp4">
     </video>
     <div class="wrap hero-content">
-      <p class="crumbs"><a href="index.html#offer">Treatments</a> / <a href="#">Facials &amp; Skin</a> / Environ</p>
-      <h1>Environ facials</h1>
+      <p class="crumbs reveal"><a href="index.html#offer">Treatments</a> / <a href="#">Facials &amp; Skin</a> / Environ</p>
+      <h1 class="reveal d1">Environ <em>facials</em></h1>
       <p class="sub">Vitamin-rich facials from Environ, the skincare brand founded by plastic surgeon Dr Des Fernandes. We build vitamin A into your skin step by step, for results that last.</p>
       <ul class="facts">
         <li>From £85</li><li>60 min</li><li>A home-care plan made for you</li>
       </ul>
       <div class="btn-row">
-        <a class="btn btn--light" href="#">Book Environ</a>
+        <a class="btn btn--peach" href="#">Book Environ <span class="arr">→</span></a>
         <a class="btn btn--ghost-light" href="#prices">See prices</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. How Environ works -->
-  <section class="section">
-    <div class="wrap prose has-img">
-      <h2>How Environ works</h2>
-      <p>Vitamin A is essential for healthy skin, but skin needs time to get used to it. Environ's Vitamin STEP-UP System™ raises the level gradually, so your skin gets stronger without irritation. Your therapist sets your starting point and moves you up as your skin is ready.</p>
-      <figure class="prose-img"><img src="assets/environ-treatment.jpg" alt="Environ facial treatment" loading="lazy"></figure>
-    </div>
-  </section>
-
-  <!-- 3. Journey -->
-  <section class="section section--tint" aria-labelledby="steps-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="steps-h">Your Environ journey</h2></div>
-      <div class="steps three">
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></div>
-          <span class="n">Step 1</span>
-          <h3>Find your step</h3>
-          <p>A skin assessment sets the vitamin A level your skin is ready for.</p>
-        </div>
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L16 8"/><path d="M14 4l1 2.5 2.5 1-2.5 1L14 11l-1-2.5-2.5-1 2.5-1z"/><path d="M19 13l.6 1.4L21 15l-1.4.6L19 17l-.6-1.4L17 15l1.4-.6z"/></svg></div>
-          <span class="n">Step 2</span>
-          <h3>Treat</h3>
-          <p>Your facial or Cool Peel uses Environ's Ionzyme® DF device, which uses sound waves and a gentle ionic current to push vitamins deeper.</p>
-        </div>
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h5v-4h5v-4h5V8h3"/><path d="M3 20h18"/></svg></div>
-          <span class="n">Step 3</span>
-          <h3>Step up</h3>
-          <p>You use Environ at home and move up the STEP-UP System™ as your skin gets stronger.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Why clients choose it + how it compares -->
-  <section class="section">
-    <div class="wrap suits">
-      <div>
-        <h2>Why clients choose it</h2>
-        <ul class="ticks">
-          <li>Targets fine lines, sun damage, pigmentation, dehydration and redness</li>
-          <li>Results build over time, rather than fading after a week</li>
-          <li>A plan built for your skin, with home care that works with your facials</li>
-        </ul>
-      </div>
-      <div class="compare">
-        <h3>How it compares</h3>
-        <ul>
-          <li><strong>Choose Environ</strong> for lasting change in ageing, sun damage or pigmentation.</li>
-          <li><strong>Choose HydraFacial instead</strong> for an instant glow and clear pores.</li>
-          <li><strong>Choose Dermalogica instead</strong> for a shorter facial tailored to breakouts or sensitivity, from £60.</li>
-        </ul>
-        <a class="link-arrow" href="#">Compare all our facials</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Treatments and prices -->
-  <section class="section section--tint" id="prices">
-    <div class="wrap" style="max-width:900px">
-      <div class="section-head"><h2>Treatments and prices</h2></div>
+  <!-- 5. Treatments and <em>prices</em> -->
+  <section class="section" id="prices" data-alt>
+    <div class="wrap reveal" style="max-width:900px">
+      <div class="section-head"><p class="eyebrow">Prices</p><h2>Treatments and <em>prices</em></h2></div>
 
       <h3 class="group-title">Essential Facial Collection</h3>
       <p class="group-note">Vitamin facials, tailored to your skin.</p>
@@ -143,10 +84,71 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- 2. How Environ <em>works</em> -->
+  <section class="section">
+    <div class="wrap prose has-img reveal">
+      <p class="eyebrow">The treatment</p>
+      <h2>How Environ <em>works</em></h2>
+      <p>Vitamin A is essential for healthy skin, but skin needs time to get used to it. Environ's Vitamin STEP-UP System™ raises the level gradually, so your skin gets stronger without irritation. Your therapist sets your starting point and moves you up as your skin is ready.</p>
+      <figure class="prose-img framed"><img src="assets/environ-treatment.jpg" alt="Environ facial treatment" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- 3. Journey -->
+  <section class="section dark grain" aria-labelledby="steps-h">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="eyebrow">Your plan</p><h2 id="steps-h">Your Environ <em>journey</em></h2></div>
+      <div class="steps three">
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></div>
+          <span class="n">Step 1</span>
+          <h3>Find your step</h3>
+          <p>A skin assessment sets the vitamin A level your skin is ready for.</p>
+        </div>
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20L16 8"/><path d="M14 4l1 2.5 2.5 1-2.5 1L14 11l-1-2.5-2.5-1 2.5-1z"/><path d="M19 13l.6 1.4L21 15l-1.4.6L19 17l-.6-1.4L17 15l1.4-.6z"/></svg></div>
+          <span class="n">Step 2</span>
+          <h3>Treat</h3>
+          <p>Your facial or Cool Peel uses Environ's Ionzyme® DF device, which uses sound waves and a gentle ionic current to push vitamins deeper.</p>
+        </div>
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h5v-4h5v-4h5V8h3"/><path d="M3 20h18"/></svg></div>
+          <span class="n">Step 3</span>
+          <h3>Step up</h3>
+          <p>You use Environ at home and move up the STEP-UP System™ as your skin gets stronger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why clients <em>choose it</em> + how it compares -->
+  <section class="section">
+    <div class="wrap suits reveal">
+      <div>
+        <p class="eyebrow">Benefits</p>
+        <h2>Why clients <em>choose it</em></h2>
+        <ul class="ticks">
+          <li>Targets fine lines, sun damage, pigmentation, dehydration and redness</li>
+          <li>Results build over time, rather than fading after a week</li>
+          <li>A plan built for your skin, with home care that works with your facials</li>
+        </ul>
+      </div>
+      <div class="compare">
+        <h3>How it <em>compares</em></h3>
+        <ul>
+          <li><strong>Choose Environ</strong> for lasting change in ageing, sun damage or pigmentation.</li>
+          <li><strong>Choose HydraFacial instead</strong> for an instant glow and clear pores.</li>
+          <li><strong>Choose Dermalogica instead</strong> for a shorter facial tailored to breakouts or sensitivity, from £60.</li>
+        </ul>
+        <a class="link-arrow" href="#">Compare all our facials</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 6. Real results -->
-  <section class="section" id="results">
-    <div class="wrap">
-      <div class="section-head"><h2>Real results</h2></div>
+  <section class="section dark grain" id="results">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="eyebrow">Before &amp; after</p><h2>Real <em>results</em></h2></div>
       <div class="ba-grid">
         <figure class="ba" style="margin:0">
           <div class="ba-box">
@@ -184,9 +186,9 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- 7. Before you book -->
-  <section class="section section--tint" id="before-you-book">
-    <div class="wrap" style="max-width:860px">
-      <div class="section-head"><h2>Before you book</h2></div>
+  <section class="section" id="before-you-book">
+    <div class="wrap reveal" style="max-width:860px">
+      <div class="section-head"><p class="eyebrow">Good to know</p><h2>Before you <em>book</em></h2></div>
       <div class="accordion">
         <div class="acc-item">
           <button class="acc-btn" aria-expanded="false" aria-controls="c1" id="cb1"><span class="acc-title">Is Environ right for me?</span><span class="acc-icon" aria-hidden="true"></span></button>
@@ -205,11 +207,12 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- 8. Book -->
-  <section class="cta" id="book">
-    <div class="wrap cta-split">
-      <figure class="cta-img"><img src="assets/facials.webp" alt="Client relaxing during a facial" loading="lazy"></figure>
+  <section class="cta" id="book" data-alt>
+    <div class="wrap cta-split reveal">
+      <figure class="cta-img framed"><img src="assets/facials.webp" alt="Client relaxing during a facial" loading="lazy"></figure>
       <div class="cta-body">
-        <h2>Start your skin plan</h2>
+        <p class="eyebrow">Book online</p>
+        <h2>Start your <em>skin plan</em></h2>
         <div class="btn-row">
         <a class="btn" href="#">Book Environ</a>
         <a class="btn btn--ghost-light" href="tel:+442085675159">Call 020 8567 5159</a>

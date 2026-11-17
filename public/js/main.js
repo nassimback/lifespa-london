@@ -136,7 +136,8 @@
     var nav = document.createElement("div");
     nav.className = "team-nav";
     nav.innerHTML = '<button type="button" aria-label="Previous team member">←</button><button type="button" aria-label="Next team member">→</button>';
-    track.parentNode.insertBefore(nav, track.nextSibling);
+    var slot = track.closest("section") && track.closest("section").querySelector("[data-team-nav]");
+    if (slot) slot.appendChild(nav); else track.parentNode.insertBefore(nav, track.nextSibling);
     var prev = nav.children[0], next = nav.children[1];
     function step() { var c = track.querySelector(".member"); return c ? c.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 24) : 300; }
     prev.addEventListener("click", function () { track.scrollBy({ left: -step(), behavior: "smooth" }); });

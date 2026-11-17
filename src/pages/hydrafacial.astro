@@ -1,99 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title={"HydraFacial in South Ealing | Life Spa London"} description={"HydraFacial at Life Spa London, South Ealing. Cleanse, exfoliate, extract and hydrate in one treatment, from £149, with no downtime."} style={1} page="hydrafacial">
+<Base title={"HydraFacial in South Ealing | Life Spa London"} description={"HydraFacial at Life Spa London, South Ealing. Cleanse, exfoliate, extract and hydrate in one treatment, from £149, with no downtime."} page="hydrafacial">
 <main id="main">
 
   <!-- 1. Hero -->
   <section class="hero hero--service" aria-label="HydraFacial">
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/hydrafacial-poster.jpg" aria-hidden="true">
-      <source src="assets/hydrafacial-hero.mp4" type="video/mp4">
-    </video>
+    <img class="hero-img" src="assets/treatment-lauren.jpg" alt="" aria-hidden="true">
     <div class="wrap hero-content">
-      <p class="crumbs"><a href="index.html#offer">Treatments</a> / <a href="#">Facials &amp; Skin</a> / HydraFacial</p>
-      <h1>HydraFacial</h1>
+      <p class="crumbs reveal"><a href="index.html#offer">Treatments</a> / <a href="#">Facials &amp; Skin</a> / HydraFacial</p>
+      <h1 class="reveal d1">HydraFacial</h1>
       <p class="sub">Cleanse, exfoliate, extract and hydrate in one treatment. Skin looks clearer and brighter straight away, with no downtime.</p>
       <ul class="facts">
         <li>From £149</li><li>30–60 min</li><li>No downtime</li><li>All skin types</li>
       </ul>
       <div class="btn-row">
-        <a class="btn btn--light" href="#">Book HydraFacial</a>
+        <a class="btn btn--peach" href="#">Book HydraFacial <span class="arr">→</span></a>
         <a class="btn btn--ghost-light" href="#prices">See prices</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. What it does -->
-  <section class="section">
-    <div class="wrap prose has-img">
-      <h2>What HydraFacial does</h2>
-      <p>HydraFacial is done with a patented device rather than by hand. Its Vortex-Fusion technology clears pores with gentle suction while it feeds serums into the skin. It's ideal for congestion, dullness, dehydration and fine lines.</p>
-      <figure class="prose-img"><img src="assets/hydrafacial-device.webp" alt="HydraFacial device treatment in progress" loading="lazy"></figure>
-    </div>
-  </section>
-
-  <!-- 3. Steps -->
-  <section class="section section--tint" aria-labelledby="steps-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="steps-h">The steps</h2></div>
-      <div class="steps">
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.4"/></svg></div>
-          <span class="n">Step 1</span>
-          <h3>Cleanse and exfoliate</h3>
-          <p>Water-based exfoliation lifts dead skin to reveal fresh skin underneath.</p>
-        </div>
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg></div>
-          <span class="n">Step 2</span>
-          <h3>Peel</h3>
-          <p>A gentle acid peel loosens dirt and oil, without visible peeling.</p>
-        </div>
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/><path d="M12 8a4 4 0 0 1 4 4 6 6 0 0 1-6 6 8 8 0 0 1-8-8 10 10 0 0 1 10-8"/></svg></div>
-          <span class="n">Step 3</span>
-          <h3>Extract</h3>
-          <p>Painless vortex suction clears blackheads and blocked pores.</p>
-        </div>
-        <div class="step">
-          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.4-2.9 8-7 9.5-4.1-1.5-7-5.100-7-9.500V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <span class="n">Step 4</span>
-          <h3>Hydrate and protect</h3>
-          <p>Antioxidants, peptides and hyaluronic acid plump and protect the skin.</p>
-        </div>
-      </div>
-      <p class="step-note">Platinum starts with lymphatic drainage. Deluxe and Platinum finish with LED light therapy.</p>
-    </div>
-  </section>
-
-  <!-- 4. Why clients choose it + how it compares -->
-  <section class="section">
-    <div class="wrap suits">
-      <div>
-        <h2>Why clients choose it</h2>
-        <ul class="ticks">
-          <li>A visible glow after one treatment, ideal before an event</li>
-          <li>No downtime, so you can go straight back to your day</li>
-          <li>Suits all skin types, including sensitive skin, after a quick consultation</li>
-          <li>Verified HydraFacial provider</li>
-        </ul>
-      </div>
-      <div class="compare">
-        <h3>How it compares</h3>
-        <ul>
-          <li><strong>Choose HydraFacial</strong> for clear pores and an instant glow, before an event or as a monthly reset.</li>
-          <li><strong>Choose Environ instead</strong> for long-term change in ageing, sun damage or pigmentation.</li>
-          <li><strong>Choose CACI instead</strong> if firmness or jowls are your main concern.</li>
-        </ul>
-        <a class="link-arrow" href="#">Compare all our facials</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Treatments and prices -->
-  <section class="section section--tint" id="prices">
-    <div class="wrap" style="max-width:900px">
-      <div class="section-head"><h2>Treatments and prices</h2></div>
+  <!-- 5. Treatments and <em>prices</em> -->
+  <section class="section" id="prices" data-alt>
+    <div class="wrap reveal" style="max-width:900px">
+      <div class="section-head"><p class="eyebrow">Prices</p><h2>Treatments and <em>prices</em></h2></div>
 
       <h3 class="group-title">Face</h3>
       <div class="accordion">
@@ -133,12 +64,81 @@ import Base from '../layouts/Base.astro';
     </div>
   </section>
 
+  <!-- 2. What it does -->
+  <section class="section">
+    <div class="wrap prose has-img reveal">
+      <p class="eyebrow">The treatment</p>
+      <h2>What HydraFacial <em>does</em></h2>
+      <p>HydraFacial is done with a patented device rather than by hand. Its Vortex-Fusion technology clears pores with gentle suction while it feeds serums into the skin. It's ideal for congestion, dullness, dehydration and fine lines.</p>
+      <figure class="prose-img framed"><img src="assets/hydrafacial-device.webp" alt="HydraFacial device treatment in progress" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- 3. Steps -->
+  <section class="section dark grain" aria-labelledby="steps-h">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="eyebrow">How it works</p><h2 id="steps-h">The <em>steps</em></h2></div>
+      <div class="steps">
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/><path d="M9.5 14a2.6 2.6 0 0 0 2.5 2.4"/></svg></div>
+          <span class="n">Step 1</span>
+          <h3>Cleanse and exfoliate</h3>
+          <p>Water-based exfoliation lifts dead skin to reveal fresh skin underneath.</p>
+        </div>
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 15h9"/></svg></div>
+          <span class="n">Step 2</span>
+          <h3>Peel</h3>
+          <p>A gentle acid peel loosens dirt and oil, without visible peeling.</p>
+        </div>
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"/><path d="M12 8a4 4 0 0 1 4 4 6 6 0 0 1-6 6 8 8 0 0 1-8-8 10 10 0 0 1 10-8"/></svg></div>
+          <span class="n">Step 3</span>
+          <h3>Extract</h3>
+          <p>Painless vortex suction clears blackheads and blocked pores.</p>
+        </div>
+        <div class="step">
+          <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.5c0 4.4-2.9 8-7 9.5-4.1-1.5-7-5.100-7-9.500V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <span class="n">Step 4</span>
+          <h3>Hydrate and protect</h3>
+          <p>Antioxidants, peptides and hyaluronic acid plump and protect the skin.</p>
+        </div>
+      </div>
+      <p class="step-note">Platinum starts with lymphatic drainage. Deluxe and Platinum finish with LED light therapy.</p>
+    </div>
+  </section>
+
+  <!-- 4. Why clients <em>choose it</em> + how it compares -->
+  <section class="section">
+    <div class="wrap suits reveal">
+      <div>
+        <p class="eyebrow">Benefits</p>
+        <h2>Why clients <em>choose it</em></h2>
+        <ul class="ticks">
+          <li>A visible glow after one treatment, ideal before an event</li>
+          <li>No downtime, so you can go straight back to your day</li>
+          <li>Suits all skin types, including sensitive skin, after a quick consultation</li>
+          <li>Verified HydraFacial provider</li>
+        </ul>
+      </div>
+      <div class="compare">
+        <h3>How it <em>compares</em></h3>
+        <ul>
+          <li><strong>Choose HydraFacial</strong> for clear pores and an instant glow, before an event or as a monthly reset.</li>
+          <li><strong>Choose Environ instead</strong> for long-term change in ageing, sun damage or pigmentation.</li>
+          <li><strong>Choose CACI instead</strong> if firmness or jowls are your main concern.</li>
+        </ul>
+        <a class="link-arrow" href="#">Compare all our facials</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 6. Real results.
        Stand-in photos (assets/demo-result-*.jpg, "before" is the same photo filtered).
        Replace each pair with Jo's real before/after photos, using separate before and after files. -->
-  <section class="section" id="results">
-    <div class="wrap">
-      <div class="section-head"><h2>Real results</h2></div>
+  <section class="section dark grain" id="results">
+    <div class="wrap reveal">
+      <div class="section-head"><p class="eyebrow">Before &amp; after</p><h2>Real <em>results</em></h2></div>
       <div class="ba-grid">
         <figure class="ba" style="margin:0">
           <div class="ba-box">
@@ -175,9 +175,9 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- 7. Before you book -->
-  <section class="section section--tint" id="before-you-book">
-    <div class="wrap" style="max-width:860px">
-      <div class="section-head"><h2>Before you book</h2></div>
+  <section class="section" id="before-you-book">
+    <div class="wrap reveal" style="max-width:860px">
+      <div class="section-head"><p class="eyebrow">Good to know</p><h2>Before you <em>book</em></h2></div>
       <div class="accordion">
         <div class="acc-item">
           <button class="acc-btn" aria-expanded="false" aria-controls="b1" id="bb1"><span class="acc-title">Is HydraFacial right for me?</span><span class="acc-icon" aria-hidden="true"></span></button>
@@ -200,11 +200,12 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <!-- 8. Book -->
-  <section class="cta" id="book">
-    <div class="wrap cta-split">
-      <figure class="cta-img"><img src="assets/hydrafacial-cta.jpg" alt="HydraFacial therapist with a client" loading="lazy"></figure>
+  <section class="cta" id="book" data-alt>
+    <div class="wrap cta-split reveal">
+      <figure class="cta-img framed"><img src="assets/hydrafacial-cta.jpg" alt="HydraFacial therapist with a client" loading="lazy"></figure>
       <div class="cta-body">
-        <h2>Ready to glow?</h2>
+        <p class="eyebrow">Book online</p>
+        <h2>Ready to <em>glow?</em></h2>
         <div class="btn-row">
         <a class="btn" href="#">Book HydraFacial</a>
         <a class="btn btn--ghost-light" href="tel:+442085675159">Call 020 8567 5159</a>

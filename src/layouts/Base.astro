@@ -1,23 +1,19 @@
 ---
-// Shared page shell for all 9 pages (3 pages x 3 design styles).
+// Shared page shell for every page.
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import PageSwitch from '../components/PageSwitch.astro';
 import WhatsApp from '../components/WhatsApp.astro';
-import { FONTS, STYLE_CSS, type PageId, type StyleId } from '../data/site';
+import { FONTS, type PageId } from '../data/site';
 
 interface Props {
   title: string;
   description: string;
-  style: StyleId;
   page: PageId;
 }
-const { title, description, style, page } = Astro.props;
+const { title, description, page } = Astro.props;
 
 // Cache-busting: a new value on every build so browsers always load the latest CSS/JS.
 const v = Date.now().toString(36);
-const bodyClass = style === 1 ? undefined : `v${style}`;
-const styleCss = STYLE_CSS[style];
 ---
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -28,31 +24,24 @@ const styleCss = STYLE_CSS[style];
   <meta name="description" content={description}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href={FONTS[style]} rel="stylesheet">
+  <link href={FONTS} rel="stylesheet">
   <link rel="stylesheet" href={`css/style.css?v=${v}`}>
-  {styleCss && <link rel="stylesheet" href={`${styleCss}?v=${v}`}>}
+  <link rel="stylesheet" href={`css/home-v2.css?v=${v}`}>
+  <link rel="stylesheet" href={`css/site.css?v=${v}`}>
 </head>
-<body class={bodyClass}>
+<body class="v2">
   <a class="skip" href="#main">Skip to content</a>
 
-  {style === 2 && <div class="announce">✦ West Spa of the Year · The London Hair &amp; Beauty Awards ✦</div>}
-  {style === 3 && (
-    <div class="utility"><div class="wrap">
-      <span class="hide-sm">Unit 2, 35–39 South Ealing Road, W5 4QT</span>
-      <span><a href="tel:+442085675159">020 8567 5159</a> · <a href="https://wa.me/447592792460">WhatsApp</a></span>
-    </div></div>
-  )}
+  <div class="announce">✦ West Spa of the Year · The London Hair &amp; Beauty Awards ✦</div>
 
-  <Header style={style} page={page} />
+  <Header page={page} />
 
   <slot />
 
-  <Footer style={style} page={page} />
+  <Footer page={page} />
   <WhatsApp />
-  <PageSwitch style={style} page={page} />
 
   <script is:inline src={`js/main.js?v=${v}`}></script>
-  {style === 2 && <script is:inline src={`js/reveal.js?v=${v}`}></script>}
-  {style === 3 && <script is:inline src={`js/reviews-slider.js?v=${v}`}></script>}
+  <script is:inline src={`js/reveal.js?v=${v}`}></script>
 </body>
 </html>
