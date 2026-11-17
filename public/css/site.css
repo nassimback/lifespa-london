@@ -261,3 +261,7 @@
   .tour-split { grid-template-columns: 1fr; gap: 28px; }
   .tour-split .tour { justify-self: stretch; max-width: none; }
 }
+
+/* Made for you: larger card titles (Teen skin / For men) */
+.v2 .made h3 { font-size: 38px; line-height: 1.1; margin-bottom: 14px; }
+@media (max-width: 900px) { .v2 .made h3 { font-size: 32px; } }
