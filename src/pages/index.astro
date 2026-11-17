@@ -206,48 +206,66 @@ import Base from '../layouts/Base.astro';
       <div class="head-row reveal">
         <div><p class="eyebrow">Before &amp; after</p><h2>Recent <em>work</em></h2>
         <p class="head-copy">Real results from our treatment rooms.</p></div>
-        <div class="rw-side"><a class="link-arrow" href="#">Follow on Instagram</a><div class="team-nav-slot" data-team-nav></div></div>
+        <div class="rw-side"><a class="link-arrow" href="#">Follow on Instagram</a></div>
       </div>
-      <div class="rw-track" data-carousel>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-1-before.jpg" alt="Before HydraFacial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-1-after.jpg" alt="After HydraFacial" loading="lazy"><span class="rw-lab">After</span></div>
+      <div class="ba-grid rw-grid">
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-1-after.jpg" alt="After HydraFacial" loading="lazy">
+            <img class="ba-before" src="assets/recent-1-before.jpg" alt="Before HydraFacial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: HydraFacial">
           </div>
           <figcaption>HydraFacial</figcaption>
         </figure>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-2-before.jpg" alt="Before Environ facial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-2-after.jpg" alt="After Environ facial" loading="lazy"><span class="rw-lab">After</span></div>
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-2-after.jpg" alt="After Environ facial" loading="lazy">
+            <img class="ba-before" src="assets/recent-2-before.jpg" alt="Before Environ facial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Environ facial">
           </div>
           <figcaption>Environ facial</figcaption>
         </figure>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-3-before.jpg" alt="Before CACI facial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-3-after.jpg" alt="After CACI facial" loading="lazy"><span class="rw-lab">After</span></div>
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-3-after.jpg" alt="After CACI facial" loading="lazy">
+            <img class="ba-before" src="assets/recent-3-before.jpg" alt="Before CACI facial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: CACI facial">
           </div>
           <figcaption>CACI facial</figcaption>
         </figure>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-4-before.jpg" alt="Before Dermalogica facial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-4-after.jpg" alt="After Dermalogica facial" loading="lazy"><span class="rw-lab">After</span></div>
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-4-after.jpg" alt="After Dermalogica facial" loading="lazy">
+            <img class="ba-before" src="assets/recent-4-before.jpg" alt="Before Dermalogica facial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Dermalogica facial">
           </div>
           <figcaption>Dermalogica facial</figcaption>
         </figure>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-5-before.jpg" alt="Before Men's facial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-5-after.jpg" alt="After Men's facial" loading="lazy"><span class="rw-lab">After</span></div>
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-5-after.jpg" alt="After Men's facial" loading="lazy">
+            <img class="ba-before" src="assets/recent-5-before.jpg" alt="Before Men's facial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Men's facial">
           </div>
           <figcaption>Men's facial</figcaption>
         </figure>
-        <figure class="rw-card">
-          <div class="rw-pair">
-            <div class="rw-img"><img src="assets/recent-6-before.jpg" alt="Before Elemis facial" loading="lazy"><span class="rw-lab">Before</span></div>
-            <div class="rw-img"><img src="assets/recent-6-after.jpg" alt="After Elemis facial" loading="lazy"><span class="rw-lab">After</span></div>
+        <figure class="ba">
+          <div class="ba-box">
+            <img src="assets/recent-6-after.jpg" alt="After Elemis facial" loading="lazy">
+            <img class="ba-before" src="assets/recent-6-before.jpg" alt="Before Elemis facial" loading="lazy">
+            <span class="ba-label b">Before</span><span class="ba-label a">After</span>
+            <div class="ba-handle"></div>
+            <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after: Elemis facial">
           </div>
           <figcaption>Elemis facial</figcaption>
         </figure>
