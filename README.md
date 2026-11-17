@@ -1,6 +1,6 @@
-# Life Spa London – website redesign
+# Lifespa London – website redesign
 
-Draft redesign for **Life Spa London** (South Ealing), built with [Astro](https://astro.build).
+Draft redesign for **Lifespa London** (South Ealing), built with [Astro](https://astro.build).
 
 Live preview: **https://nassimback.github.io/lifespa-london/**
 
