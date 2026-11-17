@@ -208,8 +208,8 @@
    110px section spacing, content spans the full width)
    =================================================================== */
 .v2 { --header-h: 80px; font-size: 17px; line-height: 1.6; }
-.v2 .wrap { max-width: none; padding-left: 40px; padding-right: 40px; }
-.v2 .wrap[style*="max-width"] { max-width: none !important; }
+.v2 .wrap, .v2 .header-inner { max-width: 1320px; margin-left: auto; margin-right: auto; padding-left: 40px; padding-right: 40px; }
+.v2 .wrap[style*="max-width"] { max-width: 1320px !important; }
 .v2 .section { padding: 110px 0; }
 .v2 .recog { padding: 80px 0 72px; }
 
@@ -240,7 +240,7 @@
 
 @media (max-width: 900px) {
   .v2 { --header-h: 68px; }
-  .v2 .wrap { padding-left: 20px; padding-right: 20px; }
+  .v2 .wrap, .v2 .header-inner { padding-left: 20px; padding-right: 20px; }
   .v2 .section { padding: 68px 0; }
   .v2 .recog { padding: 56px 0; }
   .v2 h2, .v2 .about h2, .v2 .cta h2, .v2 .cta-split h2, .v2 .recog h2, .v2 .head-row h2 { font-size: 36px; }
