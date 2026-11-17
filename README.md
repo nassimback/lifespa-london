@@ -49,4 +49,6 @@ Content follows the design brief (9 Nov 2026). Some items are stand-ins until Jo
 - HydraFacial before/after photos (`assets/demo-result-*.jpg` are placeholders; the "before" is the same photo filtered)
 - Homepage "Recent work" before/after pairs (`assets/recent-*-before/after.jpg` are stock placeholders)
 - Perk Lip, Perk Eye and Keravive prices (shown as "Ask us")
+- Awards: confirm the 2021-2024 finalist entries (client supplied, from an AI summary) and the 2018/2019 results; add proof (certificates, emails or links)
+- Marie Claire "Bring Back Beauty" campaign feature: waiting on the client's link
 - Real booking links (Book buttons currently point to `#`)
