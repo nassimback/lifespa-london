@@ -283,3 +283,6 @@
   .aw::before { left: -7px; top: 8px; }
   .aw-year { font-size: 34px; }
 }
+
+/* Hello, I am Jo: keep her face in frame when the photo is cropped to 4:5 */
+.v2 .about .pic img { object-position: 50% 32%; }
