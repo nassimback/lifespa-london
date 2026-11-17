@@ -1,0 +1,194 @@
+/* Life Spa London – feedback round 1 (17 Nov 2026). Loaded after style.css and home-v2.css.
+   General: black & white base, peach only as an accent (hovers, small details), no cream/beige,
+   no large peach blocks. */
+
+.v2 { --alt: #f4f4f3; --cream: #ffffff; --peach-soft: #f4f4f3; }
+[data-alt] { background: var(--alt) !important; }
+
+/* ---------- Black & white, peach on hover ---------- */
+.v2 .glow, .v2 .sec-num { display: none !important; }
+.announce { background: #0f0f0f; color: rgba(255,255,255,.85); border-bottom: 1px solid rgba(255,255,255,.12); }
+
+.v2 .btn { background: #0f0f0f; border-color: #0f0f0f; color: #fff; }
+.v2 .btn:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .btn--peach, .v2 .btn--light { background: #fff; border-color: #fff; color: #0f0f0f; }
+.v2 .btn--peach:hover, .v2 .btn--light:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .btn--ghost { background: transparent; color: #0f0f0f; border-color: #0f0f0f; }
+.v2 .btn--ghost:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .btn--ghost-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.7); }
+.v2 .btn--ghost-light:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .site-header:not(.is-solid):not(.menu-open) .btn.book { background: #fff; color: #0f0f0f; border-color: #fff; }
+.v2 .site-header .btn.book:hover { background: var(--peach) !important; border-color: var(--peach) !important; color: #0f0f0f !important; }
+.v2 .dark .btn--ghost { color: #fff; border-color: rgba(255,255,255,.6); }
+.v2 .dark .btn--ghost:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .link-arrow:hover { opacity: 1; color: var(--peach-deep); border-color: var(--peach-deep); }
+.v2 .dark .link-arrow:hover { color: var(--peach); border-color: var(--peach); }
+
+/* Service hero facts: white pill instead of peach */
+.v2 .facts li:first-child { background: #fff; border-color: #fff; color: #0f0f0f; }
+/* Book band: light grey, black buttons */
+.v2 .cta { background: var(--alt); }
+.v2 .cta .btn { background: #0f0f0f; border-color: #0f0f0f; color: #fff; }
+.v2 .cta .btn:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .cta .btn--ghost-light { background: transparent; color: #0f0f0f; border-color: #0f0f0f; }
+.v2 .cta .btn--ghost-light:hover { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.v2 .compare::after { display: none; }
+
+/* ---------- Header: caret + dropdown (Ellaine's design: floating white card) ---------- */
+.caret { display: inline-block; width: 7px; height: 7px; margin-left: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-3px) rotate(45deg); transition: transform .25s; }
+.has-mega:hover .caret, .has-mega.open .caret { transform: translateY(0) rotate(-135deg); }
+
+.v2 .mega { background: transparent; color: #0f0f0f; border: 0; box-shadow: none; padding: 8px 24px 0; }
+.mega-card { max-width: 1240px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 24px 60px rgba(0,0,0,.16); padding: 32px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) 260px; gap: 28px; }
+.v2 .mega h4 { margin: 0 0 10px; font: 500 .74rem var(--font-body); letter-spacing: .06em; text-transform: none; color: #6b6b6b; border: 0; padding: 0; }
+.v2 .mega .mrow { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 9px 0; border-bottom: 1px solid #efefef; font: 400 .95rem var(--font-body); color: #0f0f0f; text-decoration: none; transition: color .2s; }
+.v2 .mega .mrow .p { color: #6b6b6b; font-size: .78rem; white-space: nowrap; }
+.v2 .mega .mrow:hover, .v2 .mega .mrow[aria-current="page"] { color: var(--peach-deep); text-decoration: none; }
+.mega-side { background: #f6f6f6; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; align-self: start; }
+.ms-title { margin: 0; font: 400 1.55rem/1.15 var(--font-head); color: #0f0f0f; }
+.ms-copy { margin: 0; font-size: .88rem; line-height: 1.55; color: #3a3a3a; }
+.mega-side .link-arrow { align-self: flex-start; font-size: .88rem; color: #0f0f0f; }
+.ms-made { margin: 6px 0 0; font-size: .8rem; color: #6b6b6b; }
+.v2 .mega-side a { color: #0f0f0f; }
+
+/* ---------- Section heads ---------- */
+.v2 #popular .head-row h2 { max-width: none; }
+.v2 .head-row.center { justify-content: center; text-align: center; }
+.v2 .head-row.center h2 { margin: 0 auto; max-width: none; }
+.head-copy { margin: 18px 0 0; color: var(--grey); max-width: 46ch; font-size: 1.02rem; }
+.v2 .dark .head-copy { color: rgba(255,255,255,.65); }
+.v2 .section-head .eyebrow, .v2 .prose .eyebrow { margin-bottom: 14px; }
+
+/* ---------- Framed photo style (thin white line inset), used everywhere ---------- */
+.framed { position: relative; overflow: hidden; border-radius: 4px; }
+.framed::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(255,255,255,.6); pointer-events: none; z-index: 1; }
+.v2 .pop .tag { z-index: 2; }
+.v2 .member .ph { position: relative; }
+.v2 .member .ph::after { content: ""; position: absolute; inset: 10px; border: 1px solid rgba(255,255,255,.55); pointer-events: none; }
+
+/* Most booked: image height 300px */
+.v2 .pop .ph { aspect-ratio: auto; height: 300px; }
+
+/* Made for you: framed photos, centred copy */
+.v2 .made .ph { aspect-ratio: 4/3; margin-bottom: 28px; }
+.v2 .made .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.v2 .made:hover .ph img { transform: scale(1.05); }
+.v2 .made h3 { margin-top: 0 !important; }
+
+/* ---------- Recognition: heading, logos in the middle, marquee at the bottom ---------- */
+.recog-head { text-align: center; position: relative; }
+.v2 .recog .eyebrow { color: rgba(255,255,255,.7); }
+.v2 .recog h2 { margin-bottom: 36px; }
+.v2 .recog .row2 { margin: 0 auto 46px; }
+
+/* ---------- About: frame instead of the peach block ---------- */
+.v2 .about .pic::before { display: none; }
+.v2 .about .pic::after { inset: 14px; border: 1px solid rgba(255,255,255,.6); opacity: 1; z-index: 2; border-radius: 0; }
+
+/* ---------- Team: arrows top-right ---------- */
+.v2 #team .head-row { align-items: flex-end; }
+.team-nav-slot .team-nav { margin-top: 0; }
+
+/* ---------- FAQs ---------- */
+.v2 .faq .stick .head-copy { margin-bottom: 28px; }
+
+/* ---------- Find us: icons + labels ---------- */
+.v2 .contact-lines li { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.ci { width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; flex: none; }
+.ci svg { width: 17px; height: 17px; fill: #fff; }
+.contact-lines small { display: block; font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 2px; }
+.v2 .dark .contact-lines a { border: 0; font-size: 1.05rem; color: #fff; }
+.v2 .dark .contact-lines a:hover { color: var(--peach); }
+
+/* ---------- Footer ---------- */
+.v2 .site-footer { padding-top: 80px; }
+.foot-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 52px; margin-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.v2 .foot-big { margin: 0; font-size: clamp(3rem, 8vw, 6.6rem); }
+.foot-cta p { color: rgba(255,255,255,.7); margin: 0 0 18px; }
+.foot-cols { display: grid; grid-template-columns: 1.2fr 1.4fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 52px; }
+.foot-cols h4 { font: 500 .72rem var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: #fff; margin-bottom: 18px; }
+.foot-cols p { margin: 0 0 12px; }
+.foot-cols li { margin-bottom: 9px; }
+.foot-cols a { color: rgba(255,255,255,.75); text-decoration: none; transition: color .2s; }
+.foot-cols a:hover, .legal a:hover { color: var(--peach); text-decoration: none; }
+.foot-link { color: #fff !important; }
+.foot-hours li { display: flex; justify-content: space-between; gap: 16px; font-size: .92rem; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 8px; }
+.foot-hours li span:last-child { color: rgba(255,255,255,.6); }
+.foot-cols .badges-app { margin-top: 18px; }
+.foot-cols .badges-app img { height: 36px; }
+.legal a { color: inherit; text-decoration: none; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .mega-card { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mega-side { grid-column: 1 / -1; }
+  .foot-cols { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 980px) {
+  /* dropdown inside the mobile menu: plain list on white */
+  .v2 .mega { padding: 0 0 12px; }
+  .mega-card { box-shadow: none; padding: 0; border-radius: 0; grid-template-columns: 1fr 1fr; gap: 18px 24px; }
+  .v2 #team .head-row { align-items: flex-start; }
+  .v2 .pop .ph { height: 280px; }
+}
+@media (max-width: 760px) {
+  .foot-cols { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .foot-top { flex-direction: column; align-items: flex-start; }
+  .v2 .faq .stick .btn-row .btn { flex: 1 1 auto; }
+}
+@media (max-width: 480px) {
+  .foot-cols { grid-template-columns: 1fr; }
+  .mega-card { grid-template-columns: 1fr; }
+  .v2 .btn { padding: 15px 22px; letter-spacing: .14em; }
+  .v2 .hero .btn-row .btn { flex: 1 1 auto; }
+}
+
+/* "What it does" with eyebrow: eyebrow / heading / text on the left, photo on the right */
+.wrap.prose.has-img { grid-template-rows: auto auto auto; }
+.wrap.prose.has-img > .eyebrow { grid-column: 1; grid-row: 1; align-self: end; }
+.wrap.prose.has-img > h2 { grid-row: 2; align-self: start; }
+.wrap.prose.has-img > p:not(.eyebrow) { grid-row: 3; }
+.wrap.prose.has-img > .prose-img { grid-column: 2; grid-row: 1 / span 3; }
+@media (max-width: 860px) {
+  .wrap.prose.has-img > .prose-img { grid-column: 1; grid-row: 4; }
+}
+
+/* Mobile: awards bar fits one line, and hides when the menu is open */
+.announce:has(+ .site-header.menu-open) { transform: translateY(-100%); }
+@media (max-width: 560px) {
+  .announce { font-size: .54rem; letter-spacing: .1em; white-space: nowrap; overflow: hidden; padding: 0 8px; }
+}
+
+/* ---------- Salon tour (client video) ---------- */
+.tour { position: relative; border-radius: 4px; overflow: hidden; background: #000; aspect-ratio: 16/9; }
+.tour video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tour.framed::after { z-index: 2; }
+.tour-play {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3;
+  display: inline-flex; align-items: center; gap: 14px; padding: 14px 26px 14px 14px; border-radius: 100px; border: 0; cursor: pointer;
+  background: #fff; color: #0f0f0f; font: 500 .8rem var(--font-body); letter-spacing: .16em; text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35); transition: background .2s, transform .2s;
+}
+.tour-play span { width: 44px; height: 44px; border-radius: 50%; background: #0f0f0f; position: relative; flex: none; }
+.tour-play span::after { content: ""; position: absolute; left: 18px; top: 14px; border-left: 12px solid #fff; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
+.tour-play:hover { background: var(--peach); transform: translate(-50%, -50%) scale(1.03); }
+.tour.playing .tour-play, .tour.playing::after { display: none; }
+
+/* ---------- Recent work: boxed grid of before/after sliders ---------- */
+.rw-side { display: flex; align-items: center; gap: 24px; }
+.rw-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.rw-grid .ba-box { aspect-ratio: 1 / 1; }
+.rw-grid figcaption { margin-top: 14px; font: 500 .72rem var(--font-body); letter-spacing: .2em; text-transform: uppercase; color: var(--grey); }
+@media (max-width: 980px) {
+  .rw-grid { grid-template-columns: repeat(2, 1fr); }
+  .rw-side { width: 100%; justify-content: space-between; }
+}
+@media (max-width: 560px) {
+  .rw-grid { grid-template-columns: 1fr; }
+  .tour { aspect-ratio: 4/3; }
+  .tour-play { padding: 10px 18px 10px 10px; font-size: .7rem; letter-spacing: .1em; }
+  .tour-play span { width: 36px; height: 36px; }
+  .tour-play span::after { left: 14px; top: 11px; border-left-width: 10px; border-top-width: 7px; border-bottom-width: 7px; }
+}
+
+.v2 .mega .ms-made a { display: inline; padding: 0; }
