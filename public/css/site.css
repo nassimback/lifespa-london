@@ -201,3 +201,54 @@
 .v2 .mega-card { border-radius: 24px; }
 .v2 .mega-side { border-radius: 18px; }
 .rw-grid .ba-box, .ba-box { border-radius: 20px; }
+
+/* ===================================================================
+   Typography scale and section widths from Ellaine's design
+   (17px body, 52px h2, 26px h3, 15px nav/buttons, 40px side gutters,
+   110px section spacing, content spans the full width)
+   =================================================================== */
+.v2 { --header-h: 80px; font-size: 17px; line-height: 1.6; }
+.v2 .wrap { max-width: none; padding-left: 40px; padding-right: 40px; }
+.v2 .wrap[style*="max-width"] { max-width: none !important; }
+.v2 .section { padding: 110px 0; }
+.v2 .recog { padding: 80px 0 72px; }
+
+/* headings */
+.v2 h2, .v2 .about h2, .v2 .cta h2, .v2 .cta-split h2, .v2 .recog h2, .v2 .head-row h2 { font-size: 52px; line-height: 1.08; }
+.v2 h3, .v2 .pop h3, .v2 .made h3 { font-size: 26px; line-height: 1.2; }
+.v2 .member h3 { font-size: 22px; }
+.v2 .hero h1, .v2 .hero--service h1 { font-size: max(40px, min(80px, 6vw)); line-height: 1.08; max-width: none; }
+.v2 .hero .sub { font-size: 18px; }
+.v2 .about .lead { font-size: 20px; }
+.v2 .acc-btn { font-size: 20px; }
+.v2 .step h3 { font-size: 26px; }
+
+/* small text: eyebrows, nav, buttons and links all at 14-15px, sentence case */
+.v2 .eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .02em; text-transform: none; }
+.v2 .eyebrow::before { width: 22px; }
+.v2 .nav a.nav-link, .v2 .nav button.nav-link { font-size: 15px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.v2 .btn { font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; min-height: 46px; padding: 0 26px; }
+.v2 .nav .book { padding: 0 24px; }
+.v2 .link-arrow { font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; }
+.v2 .meta, .v2 .pop .tag { font-size: 14px; }
+.v2 .head-copy, .v2 .head-row p { font-size: 17px; }
+.v2 .announce { font-size: 13px; letter-spacing: .08em; }
+.v2 .crumbs, .v2 .facts li, .v2 .ba-label { letter-spacing: .02em; text-transform: none; }
+.v2 .facts li { font-size: 15px; }
+.v2 .member p, .v2 .rw-grid figcaption, .v2 .ba figcaption { letter-spacing: .02em; text-transform: none; font-size: 14px; }
+.v2 .mega h4, .v2 .foot-cols h4 { font-size: 13px; }
+
+@media (max-width: 900px) {
+  .v2 { --header-h: 68px; }
+  .v2 .wrap { padding-left: 20px; padding-right: 20px; }
+  .v2 .section { padding: 68px 0; }
+  .v2 .recog { padding: 56px 0; }
+  .v2 h2, .v2 .about h2, .v2 .cta h2, .v2 .cta-split h2, .v2 .recog h2, .v2 .head-row h2 { font-size: 36px; }
+  .v2 .acc-btn { font-size: 18px; }
+  .v2 .about .lead { font-size: 18px; }
+}
+@media (max-width: 480px) {
+  .v2 .announce { font-size: 10px; letter-spacing: .04em; }
+}
+.v2 .group-title { font-size: 30px; margin-top: 48px; }
+@media (max-width: 900px) { .v2 .group-title { font-size: 26px; } }
