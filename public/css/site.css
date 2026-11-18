@@ -224,12 +224,12 @@
 .v2 .step h3 { font-size: 26px; }
 
 /* small text: eyebrows, nav, buttons and links all at 14-15px, sentence case */
-.v2 .eyebrow { font-size: 14px; font-weight: 600; letter-spacing: .02em; text-transform: none; }
+.v2 .eyebrow { font-size: 14px; font-weight: 500; letter-spacing: .02em; text-transform: none; }
 .v2 .eyebrow::before { width: 22px; }
 .v2 .nav a.nav-link, .v2 .nav button.nav-link { font-size: 15px; font-weight: 500; letter-spacing: 0; text-transform: none; }
-.v2 .btn { font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; min-height: 46px; padding: 0 26px; }
+.v2 .btn { font-size: 15px; font-weight: 500; letter-spacing: 0; text-transform: none; min-height: 46px; padding: 0 26px; }
 .v2 .nav .book { padding: 0 24px; }
-.v2 .link-arrow { font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; }
+.v2 .link-arrow { font-size: 15px; font-weight: 500; letter-spacing: 0; text-transform: none; }
 .v2 .meta, .v2 .pop .tag { font-size: 14px; }
 .v2 .head-copy, .v2 .head-row p { font-size: 17px; }
 .v2 .announce { font-size: 13px; letter-spacing: .08em; }
@@ -274,7 +274,7 @@
 .aw { background: #fff; border-radius: 20px; padding: 26px 20px 24px; display: flex; flex-direction: column; gap: 8px; min-height: 230px; transition: transform .25s, box-shadow .25s; }
 .aw:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,.08); }
 .aw-year { font: 400 54px/1 var(--font-head); color: #0f0f0f; margin-bottom: 14px; }
-.aw-rank { align-self: flex-start; font: 600 13px var(--font-body); color: #0f0f0f; border: 1px solid #0f0f0f; border-radius: 100px; padding: 4px 12px; }
+.aw-rank { align-self: flex-start; font: 500 13px var(--font-body); color: #0f0f0f; border: 1px solid #0f0f0f; border-radius: 100px; padding: 4px 12px; }
 .aw-name { font-size: 15px; color: #5a5a5a; line-height: 1.45; margin-top: 4px; }
 /* the winning year is the hero of the row */
 .aw-win { background: #0f0f0f; }
@@ -295,3 +295,7 @@
   .v2 .has-mega:hover > .mega, .v2 .has-mega:has(:focus-visible) > .mega, .v2 .has-mega.open > .mega {
     visibility: visible; opacity: 1; pointer-events: auto; transform: none; transition-delay: 0s; }
 }
+
+/* Outfit is loaded in weights 300-500 only, so anything heavier gets a fake (smeared) bold.
+   Keep every bold at 500. */
+.v2 b, .v2 strong, .v2 th, .v2 dt { font-weight: 500; }
