@@ -266,23 +266,32 @@
 .v2 .made h3 { font-size: 38px; line-height: 1.1; margin-bottom: 14px; }
 @media (max-width: 900px) { .v2 .made h3 { font-size: 32px; } }
 
-/* ---------- Awards timeline ---------- */
-.aw-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; position: relative; }
-.aw-list::before { content: ""; position: absolute; left: 0; right: 0; top: 6px; height: 1px; background: #cfcfcf; }
-.aw { position: relative; padding: 34px 18px 0 0; display: flex; flex-direction: column; gap: 6px; }
-.aw::before { content: ""; position: absolute; left: 0; top: 0; width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 2px solid #0f0f0f; }
-.aw-win::before { background: var(--peach); border-color: var(--peach-deep); }
-.aw-year { font: 400 44px/1 var(--font-head); color: #0f0f0f; }
-.aw-rank { font: 600 14px var(--font-body); color: #0f0f0f; margin-top: 8px; }
-.aw-name { font-size: 14px; color: #6b6b6b; line-height: 1.45; }
-.aw-win .aw-rank { color: var(--peach-deep); }
-@media (max-width: 1100px) { .aw-list { grid-template-columns: repeat(4, 1fr); row-gap: 40px; } .aw-list::before { display: none; } }
-@media (max-width: 560px) {
-  .aw-list { grid-template-columns: 1fr; row-gap: 0; border-left: 1px solid #cfcfcf; margin-left: 6px; }
-  .aw { padding: 0 0 26px 28px; }
-  .aw::before { left: -7px; top: 8px; }
-  .aw-year { font-size: 34px; }
-}
+/* ---------- Awards: a strong feature, one card per year ---------- */
+#awards .head-row h2 { max-width: none; }
+.aw-logos { display: flex; align-items: center; gap: 22px; }
+.aw-logos img { height: 74px; width: auto; filter: grayscale(1) contrast(1.2); mix-blend-mode: multiply; }
+.aw-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 14px; }
+.aw { background: #fff; border-radius: 20px; padding: 26px 20px 24px; display: flex; flex-direction: column; gap: 8px; min-height: 230px; transition: transform .25s, box-shadow .25s; }
+.aw:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,.08); }
+.aw-year { font: 400 54px/1 var(--font-head); color: #0f0f0f; margin-bottom: 14px; }
+.aw-rank { align-self: flex-start; font: 600 13px var(--font-body); color: #0f0f0f; border: 1px solid #0f0f0f; border-radius: 100px; padding: 4px 12px; }
+.aw-name { font-size: 15px; color: #5a5a5a; line-height: 1.45; margin-top: 4px; }
+/* the winning year is the hero of the row */
+.aw-win { background: #0f0f0f; }
+.aw-win .aw-year { color: var(--peach); }
+.aw-win .aw-rank { background: var(--peach); border-color: var(--peach); color: #0f0f0f; }
+.aw-win .aw-name { color: rgba(255,255,255,.85); }
+@media (max-width: 1100px) { .aw-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } .aw-logos img { height: 58px; } }
+@media (max-width: 700px) { .aw-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } .aw { min-height: 0; padding: 20px 16px; } .aw-year { font-size: 42px; } .aw-logos { gap: 14px; } .aw-logos img { height: 46px; } }
 
-/* Hello, I am Jo: keep her face in frame when the photo is cropped to 4:5 */
-.v2 .about .pic img { object-position: 50% 32%; }
+/* ---------- Dropdown: stays open while the pointer travels from "Treatments" to the panel ---------- */
+@media (min-width: 981px) {
+  /* the trigger fills the whole header height, so there is no dead gap between it and the panel */
+  .v2 .has-mega { align-self: stretch; display: flex; align-items: center; }
+  .v2 .has-mega > .nav-link { height: var(--header-h); display: inline-flex; align-items: center; }
+  /* fade/slide instead of display:none, with a short grace period before it closes */
+  .v2 .mega { display: block; visibility: hidden; opacity: 0; pointer-events: none; transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility 0s linear .22s; }
+  .v2 .has-mega:hover > .mega, .v2 .has-mega:has(:focus-visible) > .mega, .v2 .has-mega.open > .mega {
+    visibility: visible; opacity: 1; pointer-events: auto; transform: none; transition-delay: 0s; }
+}
