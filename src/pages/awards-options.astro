@@ -1,5 +1,5 @@
 ---
-// Seven layout options for highlighting the awards, so Sam can pick one.
+// Nine layout options for highlighting the awards, so Sam can pick one.
 import Base from '../layouts/Base.astro';
 
 const awards = [
@@ -22,15 +22,17 @@ const options = [
   { n: 5, title: 'Ruled list', note: 'A calm editorial list, one award per row, like a menu. Very quiet and easy to read.' },
   { n: 6, title: 'Round seals', note: 'Each year as a round badge, like a stamp or medal. Visual, with almost no text.' },
   { n: 7, title: 'Scrolling banner', note: 'One slow-moving ribbon of awards across the full width, with the official logos beneath.' },
+  { n: 8, title: 'Real logo wall', note: 'Built around the real award logos, shown large on white tiles with the year and result underneath. Years without a logo file yet show a wordmark plaque (marked) until we get the real one.' },
+  { n: 9, title: 'Hero logos + finalist line', note: 'The three official logos large across the middle as the headline, and the finalist years as a simple line beneath.' },
 ];
 ---
-<Base title="Awards: 7 layout options | Lifespa London" description="Seven ways to highlight the awards on the homepage." page="index">
+<Base title="Awards: 9 layout options | Lifespa London" description="Nine ways to highlight the awards on the homepage." page="index">
 <main id="main">
 
   <section class="aopt-intro">
     <div class="wrap">
       <p class="eyebrow">For review</p>
-      <h1>Awards: 7 layout options</h1>
+      <h1>Awards: 9 layout options</h1>
       <p class="head-copy">Each block is a full replacement for the "Awards" section on the homepage. Tell us the number you prefer (and anything to mix in) and we'll apply it.</p>
       <nav class="aopt-jump" aria-label="Options">
         {options.map((o) => <a href={`#opt-${o.n}`}>{o.n}. {o.title}</a>)}
@@ -157,6 +159,46 @@ const options = [
     </div>
   </section>
 
+  <!-- 8 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-8">
+    <div class="wrap"><div class="aopt-label"><span>8</span><div><b>{options[7].title}</b><p>{options[7].note}</p></div></div></div>
+    <div class="aopt-stage o8" data-alt>
+      <div class="wrap">
+        <div class="head-row"><div><p class="eyebrow">Awards</p><h2>Recognised <em>year after year</em></h2><p class="head-copy">The official awards we have won and been shortlisted for since 2017.</p></div></div>
+        <ul class="o8-grid">
+          {awards.map((a) => (
+            <li class={a.win ? 'win' : ''}>
+              <div class="o8-logo">
+                {a.logo
+                  ? <img src={a.logo} alt={`The London Hair & Beauty Awards ${a.year}`}>
+                  : <span class="o8-plaque" title="Placeholder: real logo file needed"><b>{a.name}</b><i>{a.year}</i></span>}
+              </div>
+              <span class="o8-rank">{a.rank}</span>
+              <span class="o8-name">{a.year} · {a.name}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="o8-note">Dashed plaques are placeholders until we receive the official logo for that award.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-9">
+    <div class="wrap"><div class="aopt-label"><span>9</span><div><b>{options[8].title}</b><p>{options[8].note}</p></div></div></div>
+    <div class="aopt-stage o9">
+      <div class="wrap">
+        <div class="head-row center"><div><p class="eyebrow">Awards</p><h2>An <em>award-winning</em> spa</h2><p class="head-copy">West Spa of the Year 2017, and recognised by The London Hair &amp; Beauty Awards ever since.</p></div></div>
+        <div class="o9-logos">
+          {awards.filter((a) => a.logo).map((a) => (
+            <figure class={a.win ? 'win' : ''}><img src={a.logo} alt={`The London Hair & Beauty Awards ${a.year}`}><figcaption><b>{a.rank}</b>{a.year}</figcaption></figure>
+          ))}
+        </div>
+        <p class="o9-line"><span>Finalist</span>{awards.filter((a) => a.rank === 'Finalist').map((a) => <span class="o9-yr">{a.year} · {a.name}</span>)}</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 </Base>
 
@@ -174,6 +216,7 @@ const options = [
   .aopt-label p { margin: 2px 0 0; font-size: 15px; color: #6b6b6b; }
   .aopt-stage { padding: 80px 0; border-top: 1px solid #e5e5e5; }
   .aopt-stage .head-row { margin-bottom: 44px; }
+  .aopt-stage .head-row h2 { max-width: none; }
 
   /* 2 – dark band */
   .o2 { background: #0f0f0f; color: #fff; }
@@ -251,15 +294,46 @@ const options = [
   .o7-logos { display: flex; justify-content: center; gap: 28px; margin-top: 44px; flex-wrap: wrap; }
   .o7-logos img { height: 64px; width: auto; border-radius: 6px; background: #fff; padding: 6px 10px; }
 
+
+  /* 8 – real logo wall */
+  .o8-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .o8-grid li { background: #fff; border-radius: 20px; padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 8px; transition: transform .25s, box-shadow .25s; }
+  .o8-grid li:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(0,0,0,.08); }
+  .o8-logo { height: 170px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; border: 1px solid #ececec; padding: 14px; }
+  .o8-logo img { max-height: 100%; max-width: 100%; width: auto; object-fit: contain; }
+  .o8-plaque { width: 100%; height: 100%; border: 1px dashed #bdbdbd; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; padding: 10px; }
+  .o8-plaque b { font: 400 22px/1.15 var(--font-head); color: #0f0f0f; }
+  .o8-plaque i { font: 400 14px var(--font-body); font-style: normal; color: #6b6b6b; letter-spacing: .1em; }
+  .o8-rank { font-weight: 500; font-size: 15px; margin-top: 8px; }
+  .o8-name { font-size: 14px; color: #6b6b6b; }
+  .o8-grid .win { background: #0f0f0f; }
+  .o8-grid .win .o8-rank { color: var(--peach); }
+  .o8-grid .win .o8-name { color: rgba(255,255,255,.7); }
+  .o8-note { margin: 22px 0 0; font-size: 13px; color: #8a8a8a; }
+
+  /* 9 – hero logos + finalist line */
+  .o9-logos { display: flex; justify-content: center; align-items: stretch; gap: 28px; flex-wrap: wrap; margin-top: 12px; }
+  .o9-logos figure { margin: 0; flex: 1 1 260px; max-width: 360px; background: #fff; border: 1px solid #e3e3e3; border-radius: 24px; padding: 40px 28px 26px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .o9-logos img { height: 170px; width: auto; max-width: 100%; object-fit: contain; }
+  .o9-logos figcaption { font-size: 14px; color: #6b6b6b; display: flex; flex-direction: column; gap: 2px; }
+  .o9-logos figcaption b { font: 400 26px var(--font-head); color: #0f0f0f; }
+  .o9-logos .win { border-color: #0f0f0f; box-shadow: 0 0 0 1px #0f0f0f; }
+  .o9-logos .win figcaption b { color: var(--peach-deep); }
+  .o9-line { margin: 44px 0 0; padding-top: 26px; border-top: 1px solid #dadada; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; font-size: 15px; color: #444; }
+  .o9-line > span:first-child { font-weight: 500; color: #0f0f0f; }
+  .o9-yr { white-space: nowrap; }
+
   @media (max-width: 1100px) {
     .o2-row { grid-template-columns: repeat(4, 1fr); row-gap: 36px; border-top: 0; }
     .o6-row { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
     .o3-grid, .o4-grid, .o5-grid { grid-template-columns: 1fr; gap: 36px; }
+    .o8-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
     .aopt-intro { padding-top: 120px; } .aopt-intro h1 { font-size: 40px; }
     .aopt-stage { padding: 56px 0; }
     .o2-row, .o6-row { grid-template-columns: repeat(2, 1fr); }
+    .o8-logo { height: 130px; } .o9-logos img { height: 130px; }
     .o3-list li, .o4-list li { grid-template-columns: 64px 1fr; } .o3-list .n, .o4-list .n { grid-column: 2; }
     .o5-list li { grid-template-columns: 80px 1fr 20px; } .o5-list .y { font-size: 30px; }
     .o4-feature { padding: 32px 26px; } .o4-feature h3 { font-size: 34px; }
