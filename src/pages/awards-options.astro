@@ -1,0 +1,269 @@
+---
+// Seven layout options for highlighting the awards, so Sam can pick one.
+import Base from '../layouts/Base.astro';
+
+const awards = [
+  { year: '2017', rank: 'Winner', name: 'West Spa of the Year', win: true, logo: 'assets/award-2017.jpg' },
+  { year: '2018', rank: 'Highly Commended', name: 'The London Hair & Beauty Awards', logo: 'assets/award-2018.jpg' },
+  { year: '2019', rank: 'Highly Commended', name: 'The London Hair & Beauty Awards', logo: 'assets/award-2019.jpg' },
+  { year: '2021', rank: 'Finalist', name: 'British Beauty Awards' },
+  { year: '2022', rank: 'Finalist', name: 'London Day Spa of the Year' },
+  { year: '2023', rank: 'Finalist', name: 'The London Hair & Beauty Awards' },
+  { year: '2024', rank: 'Finalist', name: 'The London Hair & Beauty Awards' },
+];
+const [win, ...rest] = awards;
+const ticker = awards.map((a) => `${a.year} · ${a.rank} · ${a.name}`);
+
+const options = [
+  { n: 1, title: 'Year cards', note: 'The current version: one card per year, with the 2017 win in black.' },
+  { n: 2, title: 'Dark trophy band', note: 'A full black band: huge years, peach for the win. Makes awards the loudest thing on the page.' },
+  { n: 3, title: 'One big number', note: 'Leads with "7 awards and nominations" as a giant figure, then a compact list.' },
+  { n: 4, title: 'Spotlight on the win', note: 'The 2017 win gets a large feature card with the official logo; the other years are a tidy list beside it.' },
+  { n: 5, title: 'Ruled list', note: 'A calm editorial list, one award per row, like a menu. Very quiet and easy to read.' },
+  { n: 6, title: 'Round seals', note: 'Each year as a round badge, like a stamp or medal. Visual, with almost no text.' },
+  { n: 7, title: 'Scrolling banner', note: 'One slow-moving ribbon of awards across the full width, with the official logos beneath.' },
+];
+---
+<Base title="Awards: 7 layout options | Lifespa London" description="Seven ways to highlight the awards on the homepage." page="index">
+<main id="main">
+
+  <section class="aopt-intro">
+    <div class="wrap">
+      <p class="eyebrow">For review</p>
+      <h1>Awards: 7 layout options</h1>
+      <p class="head-copy">Each block is a full replacement for the "Awards" section on the homepage. Tell us the number you prefer (and anything to mix in) and we'll apply it.</p>
+      <nav class="aopt-jump" aria-label="Options">
+        {options.map((o) => <a href={`#opt-${o.n}`}>{o.n}. {o.title}</a>)}
+      </nav>
+    </div>
+  </section>
+
+  <!-- 1 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-1">
+    <div class="wrap"><div class="aopt-label"><span>1</span><div><b>{options[0].title}</b><p>{options[0].note}</p></div></div></div>
+    <div class="aopt-stage" data-alt>
+      <div class="wrap">
+        <div class="head-row"><div><p class="eyebrow">Awards</p><h2>Recognised <em>year after year</em></h2><p class="head-copy">From winning West Spa of the Year to being a finalist four years running.</p></div></div>
+        <ol class="aw-list">
+          {awards.map((a) => <li class={`aw${a.win ? ' aw-win' : ''}`}><span class="aw-year">{a.year}</span><span class="aw-rank">{a.rank}</span><span class="aw-name">{a.name}</span></li>)}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-2">
+    <div class="wrap"><div class="aopt-label"><span>2</span><div><b>{options[1].title}</b><p>{options[1].note}</p></div></div></div>
+    <div class="aopt-stage o2">
+      <div class="wrap">
+        <div class="o2-head"><p class="eyebrow">Awards</p><h2>Recognised since <em>2017</em></h2></div>
+        <ol class="o2-row">
+          {awards.map((a) => (
+            <li class={a.win ? 'win' : ''}>
+              <span class="y">{a.year}</span>
+              <span class="r">{a.rank}</span>
+              <span class="n">{a.name}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-3">
+    <div class="wrap"><div class="aopt-label"><span>3</span><div><b>{options[2].title}</b><p>{options[2].note}</p></div></div></div>
+    <div class="aopt-stage o3" data-alt>
+      <div class="wrap o3-grid">
+        <div class="o3-big"><span class="num">7</span><p class="eyebrow">Awards &amp; nominations</p><p class="head-copy">Since 2017, including West Spa of the Year and four finalist places in a row.</p></div>
+        <ul class="o3-list">
+          {awards.map((a) => <li class={a.win ? 'win' : ''}><span class="y">{a.year}</span><span class="r">{a.rank}</span><span class="n">{a.name}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-4">
+    <div class="wrap"><div class="aopt-label"><span>4</span><div><b>{options[3].title}</b><p>{options[3].note}</p></div></div></div>
+    <div class="aopt-stage o4" data-alt>
+      <div class="wrap">
+        <div class="head-row"><div><p class="eyebrow">Awards</p><h2>Award-winning <em>spa</em></h2></div></div>
+        <div class="o4-grid">
+          <div class="o4-feature">
+            <img src={win.logo} alt="The London Hair & Beauty Awards 2017">
+            <p class="eyebrow">2017 · Winner</p>
+            <h3>West Spa of the Year</h3>
+            <p>Our first major win, at The London Hair &amp; Beauty Awards.</p>
+          </div>
+          <ul class="o4-list">
+            {rest.map((a) => <li><span class="y">{a.year}</span><span class="r">{a.rank}</span><span class="n">{a.name}</span></li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-5">
+    <div class="wrap"><div class="aopt-label"><span>5</span><div><b>{options[4].title}</b><p>{options[4].note}</p></div></div></div>
+    <div class="aopt-stage o5">
+      <div class="wrap o5-grid">
+        <div><p class="eyebrow">Awards</p><h2>Recognised <em>year after year</em></h2><p class="head-copy">West Spa of the Year in 2017, and a finalist four years running.</p></div>
+        <ul class="o5-list">
+          {awards.map((a) => (
+            <li class={a.win ? 'win' : ''}>
+              <span class="y">{a.year}</span>
+              <span class="n"><b>{a.rank}</b>{a.name}</span>
+              <span class="arr" aria-hidden="true">→</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-6">
+    <div class="wrap"><div class="aopt-label"><span>6</span><div><b>{options[5].title}</b><p>{options[5].note}</p></div></div></div>
+    <div class="aopt-stage o6" data-alt>
+      <div class="wrap">
+        <div class="head-row center"><div><p class="eyebrow">Awards</p><h2>Recognised <em>year after year</em></h2></div></div>
+        <ul class="o6-row">
+          {awards.map((a) => (
+            <li class={a.win ? 'win' : ''}>
+              <span class="seal"><span class="s-y">{a.year}</span><span class="s-r">{a.rank}</span></span>
+              <span class="s-n">{a.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 ---------------------------------------------------------------- -->
+  <section class="aopt" id="opt-7">
+    <div class="wrap"><div class="aopt-label"><span>7</span><div><b>{options[6].title}</b><p>{options[6].note}</p></div></div></div>
+    <div class="aopt-stage o7">
+      <div class="wrap o7-head"><p class="eyebrow">Awards</p><h2>Recognised <em>year after year</em></h2></div>
+      <div class="o7-marquee" aria-label="Awards: 2017 West Spa of the Year winner; 2018 and 2019 Highly Commended; finalist 2021 to 2024">
+        <div class="o7-track" aria-hidden="true">
+          {[...ticker, ...ticker].map((t, i) => <span class={i % ticker.length === 0 ? 'win' : ''}>{t}</span>)}
+        </div>
+      </div>
+      <div class="wrap o7-logos">
+        {awards.filter((a) => a.logo).map((a) => <img src={a.logo} alt={`The London Hair & Beauty Awards ${a.year}`}>)}
+      </div>
+    </div>
+  </section>
+
+</main>
+</Base>
+
+<style is:global>
+  .aopt-intro { padding: 150px 0 40px; }
+  .aopt-intro h1 { font-size: 64px; margin: 8px 0 16px; }
+  .aopt-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .aopt-jump a { border: 1px solid #d4d4d4; border-radius: 100px; padding: 8px 16px; font-size: 14px; text-decoration: none; color: #0f0f0f; transition: background .2s, border-color .2s; }
+  .aopt-jump a:hover { background: var(--peach); border-color: var(--peach); }
+
+  .aopt { padding-top: 56px; }
+  .aopt-label { display: flex; gap: 18px; align-items: center; padding: 0 0 18px; }
+  .aopt-label > span { width: 44px; height: 44px; border-radius: 50%; background: #0f0f0f; color: #fff; display: flex; align-items: center; justify-content: center; font: 400 22px var(--font-head); flex: none; }
+  .aopt-label b { font-weight: 500; font-size: 18px; }
+  .aopt-label p { margin: 2px 0 0; font-size: 15px; color: #6b6b6b; }
+  .aopt-stage { padding: 80px 0; border-top: 1px solid #e5e5e5; }
+  .aopt-stage .head-row { margin-bottom: 44px; }
+
+  /* 2 – dark band */
+  .o2 { background: #0f0f0f; color: #fff; }
+  .o2 .eyebrow { color: rgba(255,255,255,.7); }
+  .o2 h2 { color: #fff; margin: 8px 0 56px; }
+  .o2-row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid rgba(255,255,255,.25); }
+  .o2-row li { padding: 28px 18px 0 0; display: flex; flex-direction: column; gap: 8px; border-left: 0; }
+  .o2-row .y { font: 400 clamp(46px, 5.4vw, 74px)/1 var(--font-head); color: #fff; }
+  .o2-row .r { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.9); margin-top: 6px; }
+  .o2-row .n { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.45; }
+  .o2-row .win .y { color: var(--peach); }
+  .o2-row .win .r { color: var(--peach); }
+
+  /* 3 – one big number */
+  .o3-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; }
+  .o3-big .num { display: block; font: 400 clamp(140px, 20vw, 280px)/.85 var(--font-head); color: #0f0f0f; margin-bottom: 18px; }
+  .o3-big .num::after { content: "+"; color: var(--peach-deep); }
+  .o3-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #0f0f0f; }
+  .o3-list li { display: grid; grid-template-columns: 80px 190px 1fr; gap: 16px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid #dadada; }
+  .o3-list .y { font: 400 28px var(--font-head); }
+  .o3-list .r { font-weight: 500; font-size: 15px; }
+  .o3-list .n { font-size: 15px; color: #6b6b6b; }
+  .o3-list .win .y, .o3-list .win .r { color: var(--peach-deep); }
+
+  /* 4 – spotlight */
+  .o4-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 28px; align-items: stretch; }
+  .o4-feature { background: #0f0f0f; color: #fff; border-radius: 24px; padding: 44px 40px; display: flex; flex-direction: column; gap: 14px; }
+  .o4-feature img { height: 96px; width: auto; align-self: flex-start; border-radius: 6px; background: #fff; padding: 8px 12px; }
+  .o4-feature .eyebrow { color: var(--peach); margin-top: 18px; }
+  .o4-feature h3 { color: #fff; font-size: 44px; line-height: 1.05; margin: 0; }
+  .o4-feature p { color: rgba(255,255,255,.7); margin: 0; }
+  .o4-list { list-style: none; margin: 0; padding: 0; background: #fff; border-radius: 24px; padding: 14px 32px; }
+  .o4-list li { display: grid; grid-template-columns: 90px 190px 1fr; gap: 16px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid #ececec; }
+  .o4-list li:last-child { border-bottom: 0; }
+  .o4-list .y { font: 400 36px var(--font-head); }
+  .o4-list .r { font-weight: 500; font-size: 15px; }
+  .o4-list .n { font-size: 15px; color: #6b6b6b; }
+
+  /* 5 – ruled list */
+  .o5-grid { display: grid; grid-template-columns: 4fr 8fr; gap: 80px; align-items: start; }
+  .o5-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #0f0f0f; }
+  .o5-list li { display: grid; grid-template-columns: 120px 1fr 30px; align-items: center; gap: 20px; padding: 22px 0; border-bottom: 1px solid #dadada; transition: padding .25s; }
+  .o5-list li:hover { padding-left: 14px; }
+  .o5-list .y { font: 400 40px var(--font-head); }
+  .o5-list .n { display: flex; flex-direction: column; font-size: 15px; color: #6b6b6b; }
+  .o5-list .n b { font-weight: 500; color: #0f0f0f; font-size: 17px; }
+  .o5-list .arr { color: var(--peach-deep); transition: transform .25s; }
+  .o5-list li:hover .arr { transform: translateX(4px); }
+  .o5-list .win .y { color: var(--peach-deep); }
+
+  /* 6 – seals */
+  .o6-row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 18px; }
+  .o6-row li { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .o6-row .seal { width: 100%; max-width: 150px; aspect-ratio: 1; border-radius: 50%; background: #fff; border: 1px solid #0f0f0f; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; position: relative; transition: transform .3s; }
+  .o6-row .seal::after { content: ""; position: absolute; inset: 7px; border-radius: 50%; border: 1px dashed #bdbdbd; }
+  .o6-row li:hover .seal { transform: rotate(-4deg) scale(1.03); }
+  .o6-row .s-y { font: 400 34px/1 var(--font-head); }
+  .o6-row .s-r { font-size: 11px; font-weight: 500; letter-spacing: .04em; max-width: 90px; line-height: 1.25; }
+  .o6-row .s-n { font-size: 14px; color: #6b6b6b; max-width: 150px; line-height: 1.4; }
+  .o6-row .win .seal { background: #0f0f0f; border-color: #0f0f0f; color: var(--peach); }
+  .o6-row .win .seal::after { border-color: rgba(255,255,255,.35); }
+
+  /* 7 – scrolling banner */
+  .o7 { background: #0f0f0f; color: #fff; padding-bottom: 60px; overflow: hidden; }
+  .o7 .eyebrow { color: rgba(255,255,255,.7); }
+  .o7 h2 { color: #fff; margin: 8px 0 44px; }
+  .o7-marquee { overflow: hidden; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); padding: 30px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+  .o7-track { display: flex; gap: 70px; width: max-content; animation: o7 50s linear infinite; }
+  .o7-track span { font: 400 clamp(28px, 3.4vw, 46px) var(--font-head); white-space: nowrap; display: inline-flex; align-items: center; gap: 70px; }
+  .o7-track span::after { content: "✦"; color: var(--peach); font-size: 16px; }
+  .o7-track span.win { color: var(--peach); font-style: italic; }
+  .o7-marquee:hover .o7-track { animation-play-state: paused; }
+  @keyframes o7 { to { transform: translateX(-50%); } }
+  .o7-logos { display: flex; justify-content: center; gap: 28px; margin-top: 44px; flex-wrap: wrap; }
+  .o7-logos img { height: 64px; width: auto; border-radius: 6px; background: #fff; padding: 6px 10px; }
+
+  @media (max-width: 1100px) {
+    .o2-row { grid-template-columns: repeat(4, 1fr); row-gap: 36px; border-top: 0; }
+    .o6-row { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
+    .o3-grid, .o4-grid, .o5-grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  @media (max-width: 700px) {
+    .aopt-intro { padding-top: 120px; } .aopt-intro h1 { font-size: 40px; }
+    .aopt-stage { padding: 56px 0; }
+    .o2-row, .o6-row { grid-template-columns: repeat(2, 1fr); }
+    .o3-list li, .o4-list li { grid-template-columns: 64px 1fr; } .o3-list .n, .o4-list .n { grid-column: 2; }
+    .o5-list li { grid-template-columns: 80px 1fr 20px; } .o5-list .y { font-size: 30px; }
+    .o4-feature { padding: 32px 26px; } .o4-feature h3 { font-size: 34px; }
+    .o4-list { padding: 8px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .o7-track { animation: none; } }
+</style>
